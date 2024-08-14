@@ -66,21 +66,47 @@ document.addEventListener('DOMContentLoaded', function() {
     function createNewsItem(item) {
         const newsItem = document.createElement('div');
         newsItem.classList.add('news-item');
-        
+    
         const title = document.createElement('h2');
         title.textContent = item.title;
-        
+    
         const source = document.createElement('p');
         source.classList.add('news-source');
         source.innerHTML = `Sursa: <a href="${item.link}" target="_blank">${item.source}</a>`;
+    
+        // Verifică dacă există conținut complet sau doar descriere
+        const content = item.content || item.description || 'Conținut indisponibil';
         
         const description = document.createElement('p');
-        description.innerHTML = item.content ? item.content : item.description;
+        description.innerHTML = content;
+    
+        // Adaugă butonul "Citește mai mult" doar dacă conținutul este trunchiat
+        if (!item.content) {
+            const readMore = document.createElement('a');
+            readMore.href = item.link;
+            readMore.target = '_blank';
+            readMore.classList.add('read-more-button');
+            readMore.textContent = 'Citește mai mult';
+            description.appendChild(readMore);
+        }
+    
+       // Butonul de distribuire pe Facebook
+        const shareButton = document.createElement('button');
+        shareButton.classList.add('share-button');
+        shareButton.innerHTML = '<i class="fa-brands fa-facebook"></i> Distribuie pe Facebook';
+        shareButton.addEventListener('click', function() {
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(item.link + '?utm_source=gorj-unit.com&utm_medium=social&utm_campaign=share')}&quote=${encodeURIComponent('Distribuit de pe www.gorj-unit.com')}`;
+            window.open(shareUrl, '_blank');
+        });
+
         
+    
         newsItem.appendChild(title);
-        newsItem.appendChild(source);
         newsItem.appendChild(description);
+        newsItem.appendChild(source);
+        newsItem.appendChild(shareButton);
         
+    
         if (item.enclosure && item.enclosure.link) {
             const image = document.createElement('img');
             image.src = item.enclosure.link;
@@ -92,9 +118,10 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             newsItem.appendChild(image);
         }
-        
+    
         return newsItem;
     }
+    
 
     function displayNews(newsItems) {
         loadingSpinner.style.display = 'none'; // Ascunde spinnerul după ce datele sunt încărcate

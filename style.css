@@ -318,6 +318,49 @@ section h2 {
 #weather-widget button:hover {
     background: #0056b3;
 }
+
+
+/* Stilizare pentru butonul de distribuire */
+.share-button {
+    background-color: #4267B2; /* Albastru specific Facebook */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+.share-button:hover {
+    background-color: #365899; /* O nuanță mai închisă la hover */
+}
+
+/* Stilizare pentru iconița Facebook */
+.share-button .fa-facebook {
+    margin-right: 8px; /* Spațiu între iconiță și text */
+    font-size: 18px;
+}
+
+/* Responsivitate pentru ecrane mai mici */
+@media (max-width: 600px) {
+    .share-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
 /* Media Queries pentru ecrane mai mici */
 
 /* Ecrane de 768px și mai mici */
@@ -344,6 +387,15 @@ section h2 {
         padding: 8px 12px;
         font-size: 14px;
         bottom: 15px;
+    }
+    .share-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .share-button .icon-x {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
     }
 }
 
