@@ -1,4 +1,3 @@
-/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Resetare stiluri implicite */
@@ -10,7 +9,7 @@
 
 /* Stiluri globale */
 body {
-    font-family:'Poppins', 'Segoe UI', sans-serif;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
     font-size: 12pt;
     line-height: 1.6;
     color: #333;
@@ -41,17 +40,20 @@ header .logo h1 {
     margin: 0;
     font-weight: 700;
 }
-.logo{
+
+.logo {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
-.logo img{
-    width:65px;
+
+.logo img {
+    width: 65px;
     border: 5px solid #fff;
     border-radius: 50%;
 }
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -138,7 +140,7 @@ section h2 {
 /* Stiluri pentru elementul de știre */
 .news-item {
     width: 100%;
-    min-width: 90%; /* Ajustează lățimea maximă după cum dorești */
+    min-width: 90%;
     margin-bottom: 25px;
     padding: 20px;
     border-radius: 10px;
@@ -147,7 +149,7 @@ section h2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Asigură că conținutul care depășește nu este vizibil */
+    overflow: hidden;
     margin: auto;
     justify-content: center;
     text-align: center;
@@ -164,44 +166,46 @@ section h2 {
     color: #003366;
     margin-bottom: 10px;
     margin-top: 20px;
-    text-align: center; /* Centrează titlul */
+    text-align: center;
 }
 
 .news-item .news-source {
     font-style: italic;
     color: #666;
     margin-bottom: 10px;
-    text-align: center; /* Centrează sursa */
+    text-align: center;
 }
 
 .news-item p {
     margin: 10px 0;
-    text-align: center; /* Centrează textul paragrafului */
+    text-align: center;
     width: 90%;
     justify-content: center;
 }
+
 .news-image {
     width: 200px;
     height: auto;
     margin-bottom: 10px;
 }
 
-
 .news-item img.news-image {
-    max-width: 100%; /* Asigură că imaginea nu depășește lățimea containerului */
+    max-width: 100%;
     height: auto;
     border-radius: 6px;
     margin: 10px 0;
-    display: block; /* Asigură că imaginea se comportă ca un element bloc */
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    object-fit: cover; /* Se asigură că imaginea se potrivește bine în spațiul disponibil */
+    object-fit: cover;
 }
+
 #loading-spinner {
     text-align: center;
     margin: 20px;
     font-size: 20px;
 }
+
 /* Stiluri pentru lista de primării */
 .liste-primarii {
     display: flex;
@@ -261,8 +265,8 @@ section h2 {
     max-height: 400px;
     overflow-y: auto;
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 coloane egale */
-    gap: 10px; /* Spațiu între elementele grid-ului */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
 }
 
 #weather-list li {
@@ -272,9 +276,9 @@ section h2 {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 10px;
-    font-size: 14px; /* Ajustare dimensiune font pentru a se potrivi mai bine în grid */
+    font-size: 14px;
     color: #333;
-    text-align: center; /* Centrare text pentru un aspect uniform */
+    text-align: center;
 }
 
 #weather-list li .weather-icon {
@@ -294,21 +298,6 @@ section h2 {
 
 #weather-list li:nth-child(even) {
     background: #f0f0f0;
-}
-
-#weather-list li .weather-icon {
-    font-size: 24px;
-    margin-right: 10px;
-}
-
-#weather-list li .city-name {
-    font-weight: bold;
-    flex: 1;
-}
-
-#weather-list li .temperature {
-    font-weight: normal;
-    color: #555;
 }
 
 #weather-widget button {
@@ -342,12 +331,12 @@ section h2 {
     }
 
     #weather-list {
-        grid-template-columns: repeat(2, 1fr); /* 2 coloane pentru ecrane mai mici */
+        grid-template-columns: repeat(2, 1fr);
         gap: 5px;
     }
 
     #weather-list li {
-        font-size: 12px; /* Dimensiune font mai mică pentru ecrane mici */
+        font-size: 12px;
         padding: 8px;
     }
 
@@ -369,12 +358,12 @@ section h2 {
     }
 
     #weather-list {
-        grid-template-columns: 1fr; /* 1 coloană pentru ecrane foarte mici */
+        grid-template-columns: 1fr;
         gap: 5px;
     }
 
     #weather-list li {
-        font-size: 10px; /* Dimensiune font și mai mică pentru ecrane foarte mici */
+        font-size: 10px;
         padding: 6px;
     }
 
@@ -384,6 +373,7 @@ section h2 {
         bottom: 10px;
     }
 }
+
 /* Stiluri pentru subsol */
 footer {
     background-color: #003366;
@@ -403,12 +393,18 @@ footer p {
 
 /* Stiluri pentru responsivitate */
 @media (max-width: 768px) {
-    .news-item{
+    main {
+        padding: 0;
+    }
+
+    .news-item {
         min-width: 100%;
     }
-    header{
+
+    header {
         position: relative;
     }
+
     nav ul li {
         display: block;
         margin: 10px 0;
@@ -440,5 +436,194 @@ footer p {
     .liste-primarii a {
         font-size: 0.8em;
         padding: 8px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Media Queries pentru ecrane mai mici */
+
+/* Ecrane de 768px și mai mici */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    header .logo h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        padding: 8px 12px;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    section {
+        margin-bottom: 15px;
+        min-width: 100%;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+        padding-bottom: 8px;
+    }
+
+    .news-item {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .news-item h2 {
+        font-size: 1.6em;
+    }
+
+    .news-item p {
+        width: 100%;
+    }
+
+    .news-image {
+        width: 100%;
+    }
+    
+
+    .liste-primarii {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .liste-primarii a {
+        font-size: 0.9em;
+        padding: 10px 20px;
+        margin: 5px 0;
+        width: 95%;
+        text-align: center;
+    }
+
+    #weather-widget {
+        padding: 15px;
+        width: 95%;
+    }
+
+    #weather-widget h1 {
+        font-size: 20px;
+    }
+
+    #weather-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    #weather-list li {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    #weather-widget button {
+        padding: 8px 12px;
+        font-size: 14px;
+        bottom: 15px;
+    }
+}
+
+/* Ecrane de 480px și mai mici */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    header .logo h1 {
+        font-size: 1.6em;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+
+    section {
+        padding: 15px;
+        margin-bottom: 10px;
+        width: 95%;
+    }
+
+    section h2 {
+        font-size: 1.4em;
+    }
+
+    .news-item {
+        padding: 10px;
+        margin-bottom: 15px;
+        width: 95%;
+    }
+
+    .news-item h2 {
+        font-size: 1.3em;
+    }
+
+    .news-item p {
+        font-size: 0.9em;
+    }
+
+    .liste-primarii a {
+        font-size: 0.8em;
+        padding: 8px;
+        margin: 3px 0;
+        width: 95%;
+    }
+
+    #weather-widget {
+        padding: 10px;
+        width: 95%;
+    }
+
+    #weather-widget h1 {
+        font-size: 18px;
+    }
+
+    #weather-list {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    #weather-list li {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    #weather-widget button {
+        padding: 6px 10px;
+        font-size: 12px;
+        bottom: 10px;
     }
 }

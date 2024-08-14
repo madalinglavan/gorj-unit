@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const rssUrls = [
         'https://www.ziarulmetropolis.ro/feed/',
         'https://suplimentuldecultura.ro/feed/',
-        'https://www.observatorcultural.ro/feed/',
         'https://revistacultura.ro/nou/feed/',
         'https://www.dilemaveche.ro/rss'
     ];
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const urlMap = {
             'https://www.ziarulmetropolis.ro/feed/': 'Ziarul Metropolis',
             'https://suplimentuldecultura.ro/feed/': 'Suplimentul de Cultură',
-            'https://www.observatorcultural.ro/feed/': 'Observator Cultural',
             'https://revistacultura.ro/nou/feed/': 'Revista Cultura',
             'https://www.dilemaveche.ro/rss': 'Dilema Veche'
         };
