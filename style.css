@@ -201,9 +201,18 @@ section h2 {
 }
 
 #loading-spinner {
-    text-align: center;
-    margin: 20px;
-    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #333;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Stiluri pentru lista de primării */

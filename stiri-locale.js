@@ -4,14 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const rssUrls = [
         // Surse de știri
+        'https://igj.ro/feed/',
         'https://gorjeanul.ro/feed/',
         'https://www.gorjonline.ro/feed/',
         'https://www.pandurul.ro/feed.rss',
         'https://www.gorjexpress.ro/feed/',
-        'https://www.gorjbuzau.ro/feed/',
         'https://www.ziaruldegorj.ro/feed/',
         'https://www.gorjeanul.ro/feed/category/actualitate/feed/',
-        'https://www.ziarultop.ro/feed/',
         'https://www.stirigorj.ro/feed/',
         'https://www.gorjmedia.ro/feed/',
         
@@ -44,14 +43,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function getSource(rssUrl) {
         const urlMap = {
             // Surse de știri
+            'https://igj.ro/feed/': 'Impact in Gorj',
             'https://gorjeanul.ro/feed/': 'Gorjeanul',
             'https://www.gorjonline.ro/feed/': 'Gorj Online',
             'https://www.pandurul.ro/feed.rss': 'Pandurul',
             'https://www.gorjexpress.ro/feed/': 'Gorj Express',
-            'https://www.gorjbuzau.ro/feed/': 'Gorj Buzau',
             'https://www.ziaruldegorj.ro/feed/': 'Ziarul de Gorj',
             'https://www.gorjeanul.ro/feed/category/actualitate/feed/': 'Gorjeanul - Actualitate',
-            'https://www.ziarultop.ro/feed/': 'Ziarul Top',
             'https://www.stirigorj.ro/feed/': 'Stiri Gorj',
             'https://www.gorjmedia.ro/feed/': 'Gorj Media',
 
@@ -72,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         const source = document.createElement('p');
         source.classList.add('news-source');
-        source.innerHTML = `Sursa: <a href="${item.link}" target="_blank">${item.source}</a>`;
+        source.innerHTML = `Acceseaza sursa: <a href="${item.link}" target="_blank">${item.source}</a>`;
     
         // Verifică dacă există conținut complet sau doar descriere
         const content = item.content || item.description || 'Conținut indisponibil';
