@@ -268,6 +268,77 @@ mark {
     background-color: yellow; /* Poți schimba culoarea în funcție de preferințe */
     color: rgb(255, 0, 0); /* Asigură-te că textul este vizibil */
 }
+/* Stil pentru lista de vreme */
+#weather-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 coloane egale */
+    gap: 10px; /* Spațiu între elemente */
+    list-style: none;
+    padding: 0;
+    max-height: 100vh; /* Înălțime maximă a listei */
+    overflow-y: auto; /* Scroll vertical dacă lista este prea lungă */
+    color: rgb(0, 0, 0);
+}
+
+/* Stil pentru fiecare element din listă */
+#weather-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd; /* Linie subtire pentru fiecare element */
+    border-radius: 4px; /* Colțuri rotunjite */
+    background-color: #f9f9f9; /* Fundal deschis pentru elemente */
+    font-size: 14px; /* Dimensiunea fontului */
+}
+
+/* Stil pentru iconițele vremii */
+.weather-icon {
+    margin-right: 8px; /* Spațiu între iconițe și text */
+    font-size: 20px; /* Dimensiunea iconițelor */
+}
+
+/* Stil pentru numele orașelor */
+.city-name {
+    font-weight: bold;
+    flex: 1; /* Permite textului să se extindă */
+}
+
+/* Stil pentru temperatura */
+.temperature {
+    color: #555;
+}
+
+/* Stil pentru loader */
+#loader {
+    display: none;
+    font-size: 16px; /* Dimensiunea fontului pentru loader */
+    margin-bottom: 10px;
+}
+
+/* Responsive design pentru ecrane mici */
+@media (max-width: 1200px) {
+    #weather-list {
+        grid-template-columns: repeat(4, 1fr); /* 4 coloane pe ecrane mai mici */
+    }
+}
+
+@media (max-width: 900px) {
+    #weather-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 coloane pe ecrane și mai mici */
+    }
+}
+
+@media (max-width: 600px) {
+    #weather-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 coloane pe ecrane mici */
+    }
+}
+
+@media (max-width: 400px) {
+    #weather-list {
+        grid-template-columns: 1fr; /* 1 coloană pe ecrane foarte mici */
+    }
+}
 
 
 /* Buton de distribuire pe Facebook */
@@ -301,6 +372,9 @@ mark {
         font-size: 14px;
     }
 }
+
+
+
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
