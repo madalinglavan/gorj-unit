@@ -264,6 +264,12 @@ section h2 {
     }
 }
 
+mark {
+    background-color: yellow; /* Poți schimba culoarea în funcție de preferințe */
+    color: rgb(255, 0, 0); /* Asigură-te că textul este vizibil */
+}
+
+
 /* Buton de distribuire pe Facebook */
 
 .share-button {
@@ -286,6 +292,7 @@ section h2 {
     margin-right: 8px; /* Spațiu între iconiță și text */
     font-size: 18px;
 }
+
 
 /* Responsivitate pentru ecrane mai mici */
 @media (max-width: 600px) {
@@ -310,7 +317,7 @@ section h2 {
         height: 100vh;
         top: 0;
         flex-direction: column;
-        width: 100%; /* Ajustat pentru a ocupa întreaga lățime */
+        width: 50%; /* Ajustat pentru a ocupa întreaga lățime */
         align-items: center;
         justify-content: center;
         background-color: var(--primary-color);
@@ -319,6 +326,9 @@ section h2 {
         z-index: 999; /* Sub navbar dar deasupra altor conținuturi */
         padding: 0; /* Elimină orice padding suplimentar */
         margin: 0; /* Elimină orice margine suplimentară */
+    }
+    .nav-links a{
+        text-transform: uppercase;
     }
 
     .nav-links.active {
