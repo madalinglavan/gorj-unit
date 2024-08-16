@@ -1,0 +1,347 @@
+:root {
+    --primary-color: #2c3e50;  /* Un albastru închis */
+    --secondary-color: #e74c3c; /* Un roșu vibrant */
+    --text-color: #ecf0f1; /* Un alb plăcut */
+    --background-color: #34495e; /* Un gri-albăstrui */
+    --hover-color: #3498db; /* Un albastru deschis pentru hover */
+    --inactive-color: #bdc3c7; /* Gri pentru linkuri inactive */
+    --transition-speed: 0.3s; /* Viteza tranziției */
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    position: fixed; /* Fix navbar-ul la partea superioară */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asigură-te că navbar-ul este deasupra altor elemente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin-right: 1rem; /* Pentru a face loc hamburger-ului pe mobil */
+}
+
+.nav-links li a {
+    color: var(--inactive-color); /* Gri deschis pentru linkuri inactive */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color var(--transition-speed);
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+    color: var(--hover-color); /* Culoare evidențiată la hover */
+}
+
+.hamburger {
+    
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding-right: 1rem;
+    z-index: 1000;
+    display: none;
+}
+
+.nav-links.active {
+    transform: translateX(0); /* Meniul ocupă întreaga lățime */
+}
+
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text-color);
+    margin: 4px;
+    margin-right: 20px;
+    transition: all var(--transition-speed);
+}
+section {
+    background-color: var(--text-color);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-speed) ease;
+    text-align: left; /* Textul este aliniat la stânga pentru o citire ușoară */
+    line-height: 1.6; /* Îmbunătățim lizibilitatea prin creșterea înălțimii liniei */
+}
+
+section:hover {
+    background-color: var(--hover-color); /* Fundalul se schimbă la hover */
+}
+
+/* Stiluri pentru titluri secțiuni */
+section h2 {
+    margin-bottom: 15px;
+    font-size: 2em;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 10px;
+    text-align: center; /* Titlurile sunt centrate */
+}
+
+/* Stiluri pentru containerul de știri */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* Stiluri pentru sursa de știri */
+.news-source {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    margin-top: 15px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    text-align: left;
+}
+
+.news-source::before {
+    content: "Vezi tot articolul: ";
+    font-weight: bold;
+    display: block;
+}
+
+/* Stilizare specifică pentru link-urile care indică sursa */
+.news-source a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-style: italic;
+    transition: color var(--transition-speed) ease, text-decoration var(--transition-speed) ease;
+}
+
+.news-source a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Stilul pentru fiecare element de știre */
+.news-item {
+    width: 100%;
+    max-width: 100%; /* Asigură că elementul nu depășește lățimea ecranului */
+    box-sizing: border-box; /* Include padding și border în lățimea totală */
+    margin-bottom: 25px;
+    border-radius: 10px;
+    background-color: var(--text-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: left;
+}
+
+/* Asigură că imaginile se încadrează corect în container */
+.news-item img {
+    width: 100%; /* Imaginile să se întindă pe întreaga lățime a containerului */
+    height: auto; /* Păstrează proporțiile imaginii */
+    display: block; /* Elimină spațiile adiționale sub imagine */
+}
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.news-item h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.news-item p {
+    margin: 10px 0;
+    text-align: left; /* Textul din paragrafe este aliniat la stânga */
+    width: 90%;
+    color: var(--primary-color);
+}
+
+.news-item .news-source {
+    font-style: italic;
+    color: var(--secondary-color); /* Sursa știrii în secondary-color */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.news-item p {
+    margin: 10px 0;
+    text-align: start;
+    width: 100%;
+    justify-content: center;
+    color: var(--primary-color); /* Text principal în primary-color */
+}
+/* Stilizare pentru link-urile din descrierea articolului */
+.news-item p a {
+    color: var(--link-color); /* Folosește o culoare distinctă pentru link-uri */
+    font-weight: bold; /* Evidențiază link-urile prin îngroșare */
+    text-decoration: underline; /* Sublinează link-urile pentru vizibilitate */
+    transition: color var(--transition-speed) ease;
+}
+
+.news-item p a:hover {
+    color: var(--hover-color); /* Schimbă culoarea la hover pentru un efect vizual */
+    text-decoration: none; /* Elimină sublinierea la hover pentru un efect interactiv */
+}
+
+.news-image {
+    width: 100%; /* Imaginea folosește întreaga lățime disponibilă */
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 10px;
+    object-fit: cover; /* Menținem proporțiile imaginii */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   
+}
+
+.news-item img.news-image {
+    display: block;
+    width: 100%; /* Imaginile vor ocupa întreaga lățime a containerului */
+    height: auto; /* Păstrează proporțiile corecte ale imaginii */
+    border-radius: var(--border-radius); /* Aplică colțuri rotunjite dacă este cazul */
+    margin: 10px 0; /* Adaugă spațiu între imagine și alte elemente */
+    object-fit: cover; /* Asigură că imaginea se adaptează bine în container */
+}
+
+
+#loading-spinner {
+    width: 60px; /* Dimensiune mai mare pentru un impact mai mare */
+    height: 60px;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #3498db; /* Culoare vibrantă pentru border-top */
+    animation: spin 0.1s linear infinite, pulse 1.5s ease-in-out infinite;
+    margin-left: 50%;
+    transform: translate(-50%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adaugă umbră pentru profunzime */
+    margin-top: 30px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1); /* Efect de pulsare */
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Buton de distribuire pe Facebook */
+
+.share-button {
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.share-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Stilizare pentru iconița Facebook */
+.share-button .fa-facebook {
+    margin-right: 8px; /* Spațiu între iconiță și text */
+    font-size: 18px;
+}
+
+/* Responsivitate pentru ecrane mai mici */
+@media (max-width: 600px) {
+    .share-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Pentru a evita ca conținutul să fie acoperit de navbar */
+        
+    }
+    header{
+        max-width: 100%;
+    }
+    .nav-links {
+        position: fixed;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        flex-direction: column;
+        width: 100%; /* Ajustat pentru a ocupa întreaga lățime */
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-color);
+        transform: translateX(100%);
+        transition: transform var(--transition-speed) ease-in;
+        z-index: 999; /* Sub navbar dar deasupra altor conținuturi */
+        padding: 0; /* Elimină orice padding suplimentar */
+        margin: 0; /* Elimină orice margine suplimentară */
+    }
+
+    .nav-links.active {
+        transform: translateX(0); /* Fără margine dreaptă */
+    }
+
+    .hamburger {
+        display: flex; /* Asigură-te că meniul hamburger este vizibil */
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+body {
+    padding-top: 60px; /* Pentru a evita ca conținutul să fie acoperit de navbar */
+}

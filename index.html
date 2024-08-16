@@ -1,149 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-        <title>GORJ UNIT</title>
-        
-        <!-- Meta taguri Open Graph -->
-        <meta property="og:title" content="GORJ UNIT - Știri Locale, Politică, Sport și Cultură">
-        <meta property="og:description" content="Distribuit de pe site-ul www.gorj-unit.com. Află cele mai noi știri din Gorj.">
-        <meta property="og:image" content="https://www.gorj-unit.com/img/Stema_Gorj.svg">
-        <meta property="og:url" content="https://www.gorj-unit.com">
-        <meta property="og:type" content="website">
-    </head>
-    
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorj-Unit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
-    <body>
-        <header>
+    <header>
+        <nav class="navbar">
             <div class="logo">
-                <img src="img/Stema_Gorj.svg" alt=""><h1>GORJ UNIT</h1>
+                <a href="#">Gorj-Unit</a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#stiri-locale">Știri Locale Gorj</a></li>
-                    <li><a href="#stiri-politica">Politică</a></li>
-                    <li><a href="#stiri-sport">Sport</a></li>
-                    <li><a href="#stiri-cultura">Cultură</a></li>
-                    <li><a href="#weather-widget">Vremea in Gorj</a></li>
-                    <li> <a href="#primarii-gorj">Primării Gorj</a></li>
-                </ul>
-            </nav>
-        </header>
+            <ul class="nav-links">
+                <li><a href="#home">Acasa</a></li>
+                <li><a href="#despre-gorj">Despre Gorj</a></li>
+                <li><a href="#turism">Turism</a></li>
+                <li><a href="#business">Business</a></li>
+                <br>
+                <li><a href="#stiri-locale">Știri Locale Gorj</a></li>
+                <li><a href="#articole-mele">Articolele Mele</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Caută știri...">
+                <script src="search-bar.js" defer></script>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <script src="hamburger.js" defer></script>
+        </nav>
+    </header>
     
-        <main>
-            <div id="weather-widget">
-                <div class="widget-header">
-                    <h1>Temperaturi în Gorj</h1>
-                </div>
-                <ul id="weather-list">
-                    <!-- Temperaturi vor fi adăugate aici de JavaScript -->
-                </ul>
-                <br><br>
-                <button id="refresh-button">Actualizează</button>
-            </div>
-            <script src="weather.js" defer></script>
 
+    <main>
+        <section id="stiri-locale">
+            <div id="loading-spinner"></div>
+            <h2>TITLURI | Știri Locale  </h2>
+            <script src="stiri-locale.js" defer></script>
             
-            <section id="stiri-locale">
-                <div id="loading-spinner">Încărcare...</div>
-                <h2>TITLURI | Știri Locale  </h2>
-                
-                
-            </section>
-    
-            <section id="stiri-politica">
-                <h2>Politică</h2>
-            </section>
-    
-            <section id="stiri-sport">
-                <h2>Sport</h2>
-            </section>
-    
-            <section id="stiri-cultura">
-                <h2>Cultură</h2>
-            </section>
-            <section id="primarii-gorj">
-                <h2>Primarii Gorj</h2>
-                <p class="liste-primarii">
-                            <a href="https://www.primariaalbeni.ro">Primăria Albeni</a>
-                            <a href="#">Primăria Alimpești (Site indisponibil)</a>
-                            <a href="#">Primăria Aninoasa (Site indisponibil)</a>
-                            <a href="https://www.primariaarcani.ro">Primăria Arcani</a>
-                            <a href="#">Primăria Baia de Fier (Site indisponibil)</a>
-                            <a href="https://www.primariabalanesti.ro">Primăria Bălănești</a>
-                            <a href="https://www.primariabalesti.ro">Primăria Bălești</a>
-                            <a href="#">Primăria Bărbătești (Site indisponibil)</a>
-                            <a href="https://www.primariabengesticiocadia.ro">Primăria Bengești-Ciocadia</a>
-                            <a href="#">Primăria Berlești (Site indisponibil)</a>
-                            <a href="https://www.primariabilteni.ro">Primăria Bâlteni</a>
-                            <a href="#">Primăria Bolboși (Site indisponibil)</a>
-                            <a href="#">Primăria Borăscu (Site indisponibil)</a>
-                            <a href="#">Primăria Brănești (Site indisponibil)</a>
-                            <a href="#">Primăria Bumbești-Pițic (Site indisponibil)</a>
-                            <a href="https://primariabustuchin.ro">Primăria Bustuchin</a>
-                            <a href="#">Primăria Câlnic (Site indisponibil)</a>
-                            <a href="#">Primăria Căpreni (Site indisponibil)</a>
-                            <a href="#">Primăria Cătunele (Site indisponibil)</a>
-                            <a href="#">Primăria Ciuperceni (Site indisponibil)</a>
-                            <a href="https://www.primariacrasna.ro">Primăria Crasna</a>
-                            <a href="#">Primăria Crușeț (Site indisponibil)</a>
-                            <a href="#">Primăria Dănciulești (Site indisponibil)</a>
-                            <a href="#">Primăria Dănești (Site indisponibil)</a>
-                            <a href="#">Primăria Drăgotești (Site indisponibil)</a>
-                            <a href="https://www.primariadragutesti.ro">Primăria Drăguțești</a>
-                            <a href="https://www.primariafarcasesti.ro">Primăria Fărcășești</a>
-                            <a href="#">Primăria Glogova (Site indisponibil)</a>
-                            <a href="#">Primăria Godinești (Site indisponibil)</a>
-                            <a href="#">Primăria Hurezani (Site indisponibil)</a>
-                            <a href="https://www.primariaionesti.ro">Primăria Ionești</a>
-                            <a href="#">Primăria Jupânești (Site indisponibil)</a>
-                            <a href="#">Primăria Lelești (Site indisponibil)</a>
-                            <a href="#">Primăria Licurici (Site indisponibil)</a>
-                            <a href="#">Primăria Logrești (Site indisponibil)</a>
-                            <a href="https://www.primariamatasari.ro">Primăria Mătăsari</a>
-                            <a href="#">Primăria Mușetești (Site indisponibil)</a>
-                            <a href="#">Primăria Negomir (Site indisponibil)</a>
-                            <a href="#">Primăria Padeș (Site indisponibil)</a>
-                            <a href="https://www.primariapestisani.ro">Primăria Peștișani</a>
-                            <a href="#">Primăria Plopșoru (Site indisponibil)</a>
-                            <a href="https://www.primariapolovragi.ro">Primăria Polovragi</a>
-                            <a href="https://www.primariaprigoria.ro">Primăria Prigoria</a>
-                            <a href="#">Primăria Roșia de Amaradia (Site indisponibil)</a>
-                            <a href="https://www.primariaruncu.ro">Primăria Runcu</a>
-                            <a href="#">Primăria Săcelu (Site indisponibil)</a>
-                            <a href="#">Primăria Samarinești (Site indisponibil)</a>
-                            <a href="#">Primăria Săulești (Site indisponibil)</a>
-                            <a href="#">Primăria Schela (Site indisponibil)</a>
-                            <a href="https://www.primariascoarta.ro">Primăria Scoarța</a>
-                            <a href="#">Primăria Slivilești (Site indisponibil)</a>
-                            <a href="#">Primăria Stănești (Site indisponibil)</a>
-                            <a href="#">Primăria Stejari (Site indisponibil)</a>
-                            <a href="#">Primăria Stoina (Site indisponibil)</a>
-                            <a href="https://www.primariatanțareni.ro">Primăria Țânțăreni</a>
-                            <a href="https://www.primariatelesti.ro">Primăria Telești</a>
-                            <a href="https://www.primariaturburea.ro">Primăria Turburea</a>
-                            <a href="https://www.primariaturcinesti.ro">Primăria Turcinești</a>
-                            <a href="#">Primăria Urdari (Site indisponibil)</a>
-                            <a href="#">Primăria Văgiulești (Site indisponibil)</a>
-                            <a href="#">Primăria Vladimir (Site indisponibil)</a>
-                </p>
-            </section>
-
-
-            <script src="eu-funds-news.js"></script>
-                <script src="stiri-locale.js"></script>
-                <script src="stiri-sport.js"></script>
-                <script src="stiri-cultura.js"></script>
-                <script src="stiri-politica.js"></script>
-        </main>
-    
-        <footer>
-            <p>&copy; 2024 Gorj Unit. Toate drepturile rezervate.</p>
-        </footer>
+        </section>
+        
+    </main>
 </body>
 </html>

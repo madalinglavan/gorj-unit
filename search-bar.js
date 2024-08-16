@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const newsContainer = document.getElementById('stiri-locale');
     const loadingSpinner = document.getElementById('loading-spinner');
+    const searchInput = document.getElementById('search-input');
 
     const rssUrls = [
         // Surse de știri
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://www.radioinfinit.ro/feed/',
         'https://www.radiogorjeanul.ro/feed/'
     ];
+
+    let allNewsItems = [];
 
     function fetchNews(rssUrl) {
         return fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
@@ -64,20 +67,20 @@ document.addEventListener('DOMContentLoaded', function() {
     function createNewsItem(item) {
         const newsItem = document.createElement('div');
         newsItem.classList.add('news-item');
+        newsItem.dataset.title = item.title.toLowerCase(); // Adăugăm titlul în lowercase pentru căutare
 
         const title = document.createElement('h2');
         title.textContent = item.title;
 
         const source = document.createElement('p');
         source.classList.add('news-source');
-        source.innerHTML = `Sursa: <a href="${item.link}" target="_blank">${item.source}</a>`;
+        source.innerHTML = `Acceseaza sursa: <a href="${item.link}" target="_blank">${item.source}</a>`;
 
         const content = item.content || item.description || 'Conținut indisponibil';
         
         const description = document.createElement('p');
         description.innerHTML = content;
 
-        // Adaugă mai multe informații
         if (item.author) {
             const author = document.createElement('p');
             author.classList.add('news-author');
@@ -91,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             pubDate.textContent = `Publicat pe: ${new Date(item.pubDate).toLocaleDateString()}`;
             newsItem.appendChild(pubDate);
         }
-        
+
         if (!item.content) {
             const readMore = document.createElement('a');
             readMore.href = item.link;
@@ -131,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayNews(newsItems) {
         loadingSpinner.style.display = 'none'; // Ascunde spinnerul după ce datele sunt încărcate
+        newsContainer.innerHTML = ''; // Curăță conținutul existent
         if (newsItems.length === 0) {
             const errorMessage = document.createElement('p');
             errorMessage.textContent = 'Nu am reușit să încarcăm știrile. Te rugăm să încerci din nou mai târziu.';
@@ -143,10 +147,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function filterNews(query) {
+        const lowerCaseQuery = query.toLowerCase();
+        const newsItems = newsContainer.querySelectorAll('.news-item');
+        newsItems.forEach(item => {
+            const title = item.dataset.title;
+            if (title.includes(lowerCaseQuery)) {
+                item.style.display = ''; // Afișează elementul
+            } else {
+                item.style.display = 'none'; // Ascunde elementul
+            }
+        });
+    }
+
+    searchInput.addEventListener('input', function() {
+        const query = searchInput.value;
+        filterNews(query);
+    });
+
     async function loadAllNews() {
         try {
             const newsPromises = rssUrls.map(url => fetchNews(url));
-            const allNewsItems = (await Promise.all(newsPromises)).flat();
+            allNewsItems = (await Promise.all(newsPromises)).flat();
 
             allNewsItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
             displayNews(allNewsItems);
