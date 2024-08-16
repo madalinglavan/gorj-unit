@@ -228,13 +228,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
+// Gestionarea click-ului pe butonul de meniu (hamburger)
 document.querySelector(".hamburger").addEventListener("click", function() {
     this.classList.toggle("active");
     document.querySelector(".nav-links").classList.toggle("active");
 });
 
-// Selectează toate link-urile din nav
+// Închiderea meniului după selectarea unui link din meniul nav
 document.querySelectorAll(".nav-links li a").forEach(link => {
     link.addEventListener("click", function() {
         // Închide meniul hamburger după ce se face click pe un link
@@ -242,3 +242,16 @@ document.querySelectorAll(".nav-links li a").forEach(link => {
         document.querySelector(".nav-links").classList.remove("active");
     });
 });
+
+// Închiderea meniului când se face click în afara acestuia
+document.addEventListener("click", function(event) {
+    const isClickInsideMenu = document.querySelector(".nav-links").contains(event.target);
+    const isClickOnHamburger = document.querySelector(".hamburger").contains(event.target);
+
+    // Dacă click-ul nu este pe meniu sau pe hamburger, închide meniul
+    if (!isClickInsideMenu && !isClickOnHamburger) {
+        document.querySelector(".hamburger").classList.remove("active");
+        document.querySelector(".nav-links").classList.remove("active");
+    }
+});
+

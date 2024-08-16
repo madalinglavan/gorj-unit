@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
     --primary-color: #2c3e50;  /* Un albastru închis */
     --secondary-color: #e74c3c; /* Un roșu vibrant */
@@ -7,7 +8,12 @@
     --inactive-color: #bdc3c7; /* Gri pentru linkuri inactive */
     --transition-speed: 0.3s; /* Viteza tranziției */
 }
-
+html{
+    font-family:'Poppins', 'Segoe UI', sans-serif;
+    font-size: 12pt;
+    color: var(--text-color);
+    text-align: center;
+}
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -390,23 +396,37 @@ mark {
         right: 0;
         height: 100vh;
         top: 0;
+        width: 35%; 
         flex-direction: column;
-        width: 50%; /* Ajustat pentru a ocupa întreaga lățime */
-        align-items: center;
+        align-items: flex-end; /* Aliniere la stânga */
         justify-content: center;
         background-color: var(--primary-color);
         transform: translateX(100%);
         transition: transform var(--transition-speed) ease-in;
         z-index: 999; /* Sub navbar dar deasupra altor conținuturi */
-        padding: 0; /* Elimină orice padding suplimentar */
+        padding: 20px; /* Elimină orice padding suplimentar */
         margin: 0; /* Elimină orice margine suplimentară */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Adaugă o umbră pentru un efect 3D */
+        overflow-y: auto; /* Permite scroll-ul vertical dacă meniul este prea lung */
     }
-    .nav-links a{
+    .nav-links a {
+        color: white;
         text-transform: uppercase;
+        font-size: 18px; /* Dimensiunea fontului pentru text */
+        padding: 15px 0; /* Spațiu între linkuri */
+        text-align: left; /* Alinierea textului la stânga */
+        min-width: 100%; /* Ocupă întreaga lățime pentru a se alinia perfect */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linie sub fiecare link */
+        transition: background-color 0.3s ease, padding-left 0.3s ease;
     }
-
+    
+    .nav-links a:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Efect de hover */
+        padding-left: 20px; /* Mic efect de "slide" la hover */
+    }
+    
     .nav-links.active {
-        transform: translateX(0); /* Fără margine dreaptă */
+        transform: translateX(0); /* Aduce meniul în vizor */
     }
 
     .hamburger {
