@@ -20,10 +20,12 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
-
+header{
+    margin-bottom: 20px;
+}
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-evenly;
     align-items: center;
     padding: 1rem;
     background-color: var(--primary-color);
@@ -84,6 +86,34 @@ body {
     margin-right: 20px;
     transition: all var(--transition-speed);
 }
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+#search-input:focus {
+    border-color: var(--hover-color); 
+    box-shadow: 0 0 5px var(--hover-color);
+}
+
+#search-input::placeholder {
+    color:var(--background-color);
+}
+
 section {
     background-color: var(--text-color);
     margin-bottom: 20px;
@@ -96,7 +126,7 @@ section {
 }
 
 section:hover {
-    background-color: var(--hover-color); /* Fundalul se schimbă la hover */
+    background-color: var(--background-color); /* Fundalul se schimbă la hover */
 }
 
 /* Stiluri pentru titluri secțiuni */
@@ -155,7 +185,7 @@ section h2 {
     margin-bottom: 25px;
     border-radius: 10px;
     background-color: var(--text-color);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.274);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     display: flex;
     flex-direction: column;
@@ -237,60 +267,126 @@ section h2 {
 
 
 #loading-spinner {
-    width: 60px; /* Dimensiune mai mare pentru un impact mai mare */
+    position: relative; /* Necesită pentru a poziționa ::before relativ la spinner */
+    width: 60px;
     height: 60px;
     border: 6px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    border-top-color: #3498db; /* Culoare vibrantă pentru border-top */
-    animation: spin 0.1s linear infinite, pulse 1.5s ease-in-out infinite;
-    margin-left: 50%;
-    transform: translate(-50%);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adaugă umbră pentru profunzime */
+    border-top-color: #3498db;
+    animation: spin 0.1s linear infinite, pulse 0.5s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loading-spinner::before {
+    content: "Încărcare"; /* Textul care va apărea în centrul spinner-ului */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: #3498db; /* Poți schimba culoarea textului dacă vrei */
+    text-align: center;
+    z-index: 1; /* Asigură că textul este deasupra spinner-ului */
 }
 
 @keyframes spin {
-    to {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
         transform: rotate(360deg);
     }
 }
 
 @keyframes pulse {
-    0% {
+    0%, 100% {
         transform: scale(1);
-        opacity: 1;
     }
     50% {
-        transform: scale(1.1); /* Efect de pulsare */
-        opacity: 0.8;
+        transform: scale(1.1);
     }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+}
+#despre-gorj {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+#despre-gorj:hover{
+    background-color: #bdc3c7;
+}
+
+#despre-gorj h3, #despre-gorj h4 {
+    color: #2a2a2a;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+#despre-gorj p {
+    margin-bottom: 15px;
+}
+
+#despre-gorj strong {
+    color: #0056b3;
+}
+
+#despre-gorj ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+#despre-gorj ul li {
+    margin-bottom: 10px;
+}
+
+#despre-gorj h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+#despre-gorj h4 {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+#despre-gorj p strong {
+    font-size: 1.2em;
+}
+
+#despre-gorj p:last-of-type {
+    font-style: italic;
+    font-weight: normal;
 }
 
 mark {
-    background-color: yellow; /* Poți schimba culoarea în funcție de preferințe */
-    color: rgb(255, 0, 0); /* Asigură-te că textul este vizibil */
+    background-color: var(--primary-color); /* Poți schimba culoarea în funcție de preferințe */
+    color: rgb(255, 255, 255); /* Asigură-te că textul este vizibil */
 }
 /* Stil pentru lista de vreme */
 #weather-list {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 coloane egale */
-    gap: 10px; /* Spațiu între elemente */
+    grid-template-columns: repeat(6, 1fr); /* 5 coloane egale */
+    gap:3px; /* Spațiu între elemente */
     list-style: none;
     padding: 0;
     max-height: 100vh; /* Înălțime maximă a listei */
     overflow-y: auto; /* Scroll vertical dacă lista este prea lungă */
-    color: rgb(0, 0, 0);
+    color: var(--primary-color);
 }
 
 /* Stil pentru fiecare element din listă */
 #weather-list li {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 3px;
     border: 1px solid #ddd; /* Linie subtire pentru fiecare element */
     border-radius: 4px; /* Colțuri rotunjite */
     background-color: #f9f9f9; /* Fundal deschis pentru elemente */
@@ -391,6 +487,9 @@ mark {
     header{
         max-width: 100%;
     }
+    .navbar{
+        justify-content: space-between;
+    }
     .nav-links {
         position: fixed;
         right: 0;
@@ -444,6 +543,17 @@ mark {
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
+    .search-container {
+        max-width: 200px;
+    }
+    
+    #search-input {
+        width: 100px;
+        padding: 3px 5px;
+        font-size: 16px;
+
+    }
+    
 }
 
 body {
