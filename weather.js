@@ -1,20 +1,4 @@
 const apiKey = '658ab63cff086fa13b7cf1215d8a20ed';
-const cities = [
-    'Albeni', 'Alimpești', 'Aninoasa', 'Arcani', 'Baia de Fier',
-    'Bălănești', 'Bălești', 'Bărbătești', 'Bengești', 
-    'Berlești', 'Bâlteni', 'Bolboși', 'Borăscu', 'Brănești',
-    'Bumbești-Pițic', 'Bustuchin', 'Câlnic', 'Căpreni', 'Cătunele',
-    'Ciuperceni', 'Crasna', 'Crușeț', 'Dănciulești', 'Dănești',
-    'Drăgotești', 'Drăguțești', 'Fărcășești', 'Glogova', 
-    'Godinești', 'Hurezani', 'Ionești', 'Jupânești', 'Lelești',
-    'Licurici', 'Mătăsari', 'Mușetești', 'Negomir',
-    'Padeș', 'Peștișani', 'Plopșoru', 'Polovragi', 'Prigoria',
-    'Roșia de Amaradia', 'Runcu', 'Săcelu', 'Samarinești', 
-    'Săulești', 'Schela', 'Scoarța', 'Slivilești', 'Stănești',
-    'Stejari', 'Stoina', 'Târgu Logrești', 'Târgu Jiu', 
-    'Târgu Cărbuneşti', 'Țânțăreni', 'Telești', 'Turburea',
-    'Turcinești', 'Urdari', 'Văgiulești', 'Vladimir'
-];
 
 const weatherList = document.getElementById('weather-list');
 const loader = document.getElementById('loader');
@@ -36,24 +20,30 @@ function getWeatherIcon(weather, isDaytime) {
     return icons[weather] || '<i class="fas fa-question-circle weather-icon"></i>';
 }
 
-async function fetchWeather(city) {
+async function fetchWeather(lat, lon) {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},ro&appid=${apiKey}&units=metric`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=${apiKey}&units=metric`);
         if (!response.ok) {
-            if (response.status === 404) {
-                throw new Error(`Orașul ${city} nu a fost găsit.`);
-            }
-            throw new Error(`Eroare la obținerea vremii pentru ${city}`);
+            throw new Error(`Eroare la obținerea vremii pentru locația curentă.`);
         }
         const data = await response.json();
-        const localTime = new Date(data.dt * 1000);
 
-        return {
-            name: city,
-            temperature: data.main.temp,
-            weather: data.weather[0].main,
-            isDaytime: isDaytime(localTime)
-        };
+        // Logarea răspunsului API în consolă
+        console.log(data);
+
+        const today = new Date();
+        const forecasts = data.daily.slice(0, 3); // Obținem prognoza pentru 3 zile
+
+        return forecasts.map((forecast, index) => {
+            const forecastDate = new Date(today);
+            forecastDate.setDate(today.getDate() + index);
+            return {
+                date: forecastDate.toLocaleDateString(),
+                temperature: forecast.temp.day,
+                weather: forecast.weather[0].main,
+                isDaytime: isDaytime(forecastDate)
+            };
+        });
     } catch (error) {
         console.error(error.message);
         throw error;
@@ -64,34 +54,37 @@ async function updateWeather() {
     loader.style.display = 'block';
     weatherList.innerHTML = '';
 
-    const weatherPromises = cities.map(city => fetchWeather(city).catch(error => ({
-        name: city,
-        temperature: 'N/A',
-        weather: 'Unknown',
-        error: error.message
-    })));
+    navigator.geolocation.getCurrentPosition(async (position) => {
+        const { latitude, longitude } = position.coords;
 
-    const weatherResults = await Promise.all(weatherPromises);
+        try {
+            const weatherResults = await fetchWeather(latitude, longitude);
 
-    weatherResults.forEach(weather => {
-        const listItem = document.createElement('li');
-        if (weather.error) {
+            weatherResults.forEach(weather => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    ${getWeatherIcon(weather.weather, weather.isDaytime)}
+                    <span class="city-name">${weather.date}</span> 
+                    <span class="temperature">${weather.temperature}°C</span>
+                `;
+                weatherList.appendChild(listItem);
+            });
+
+        } catch (error) {
+            const listItem = document.createElement('li');
             listItem.innerHTML = `
                 <i class="fas fa-question-circle weather-icon"></i>
-                <span class="city-name">${weather.name}</span> 
-                <span class="temperature">${weather.error}</span>
+                <span class="city-name">Eroare</span> 
+                <span class="temperature">${error.message}</span>
             `;
-        } else {
-            listItem.innerHTML = `
-                ${getWeatherIcon(weather.weather, weather.isDaytime)}
-                <span class="city-name">${weather.name}</span> 
-                <span class="temperature">${weather.temperature}°C</span>
-            `;
+            weatherList.appendChild(listItem);
+        } finally {
+            loader.style.display = 'none';
         }
-        weatherList.appendChild(listItem);
+    }, (error) => {
+        console.error('Eroare la obținerea locației', error);
+        loader.style.display = 'none';
     });
-
-    loader.style.display = 'none';
 }
 
 document.getElementById('refresh-button').addEventListener('click', updateWeather);
