@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://www.bumbesti-jiu.ro/feed',         // Bumbești-Jiu
         'https://www.primariarovinari.ro/feed',     // Rovinari
         'https://www.primariacarbunesti.ro/feed',   // Târgu Cărbunești
-        'https://www.primariatismana.ro/rss',       // Tismana
         'https://www.primariaturceni.ro/rss',       // Turceni
         'https://www.primarianovaci.ro/rss',        // Novaci
         'https://www.primarieticleni.ro/rss',       // Țicleni
@@ -106,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
             'https://www.bumbesti-jiu.ro/feed': 'Primaria Bumbești-Jiu',
             'https://www.primariarovinari.ro/feed': 'Primaria Rovinari',
             'https://www.primariacarbunesti.ro/feed': 'Primaria Târgu Cărbunești',
-            'https://www.primariatismana.ro/feed': 'Primaria Tismana',
             'https://www.primariaturceni.ro/feed': 'Primaria Turceni',
             'https://www.primarianovaci.ro/feed': 'Primaria Novaci',
             'https://www.primarieticleni.ro/feed': 'Primaria Țicleni',
