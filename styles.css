@@ -124,7 +124,7 @@ section {
 }
 
 section:hover {
-    background-color: var(--background-color); /* Fundalul se schimbă la hover */
+    
 }
 
 /* Stiluri pentru titluri secțiuni */
@@ -335,6 +335,10 @@ section h2 {
     50% {
         transform: scale(1.1);
     }
+}
+.check-website{
+    font-size: .9rem;
+    color: var(--hover-color)
 }
 #about-gorj {
     line-height: 1.6;
