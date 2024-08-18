@@ -18,31 +18,11 @@ html, body {
 }
 header{
     margin-bottom: 40px;
+    position: relative;
 }
-.wrap-stiri-locale,
-.wrap-weather-list {
-    flex-direction: column;
-    width: 100%;
-    display: flex;
-    overflow-y: scroll;
+main{
+    padding-top: 40px;
 }
-
-/* Default height for larger screens */
-@media (min-height: 670px) {
-    .wrap-stiri-locale,
-    .wrap-weather-list {
-        height: 80vh;
-    }
-}
-
-/* Adjust height for smaller screens */
-@media (max-height: 670px) {
-    .wrap-stiri-locale,
-    .wrap-weather-list {
-        height: 70vh;
-    }
-}
-
 .navbar {
     display: flex;
     justify-content:space-evenly;
@@ -459,9 +439,10 @@ mark {
     color: rgb(255, 255, 255); /* Asigură-te că textul este vizibil */
 }
 /* Stil pentru lista de vreme */
+
 #weather-list {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 5 coloane egale */
+    grid-template-columns: repeat(3, 1fr); /* 5 coloane egale */
     gap:3px; /* Spațiu între elemente */
     list-style: none;
     padding: 0;
