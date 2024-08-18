@@ -20,13 +20,29 @@ header{
     margin-bottom: 40px;
 }
 .wrap-stiri-locale,
-.wrap-weather-list{
+.wrap-weather-list {
     flex-direction: column;
-    height: 75vh;
     width: 100%;
     display: flex;
     overflow-y: scroll;
 }
+
+/* Default height for larger screens */
+@media (min-height: 670px) {
+    .wrap-stiri-locale,
+    .wrap-weather-list {
+        height: 80vh;
+    }
+}
+
+/* Adjust height for smaller screens */
+@media (max-height: 670px) {
+    .wrap-stiri-locale,
+    .wrap-weather-list {
+        height: 70vh;
+    }
+}
+
 .navbar {
     display: flex;
     justify-content:space-evenly;
