@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://www.pandurul.ro/feed.rss',
         'https://www.gorjexpress.ro/feed/',
         'https://www.ziaruldegorj.ro/feed/',
-        'https://www.gorjeanul.ro/feed/category/actualitate/feed/',
         'https://www.stirigorj.ro/feed/',
         'https://www.gorjmedia.ro/feed/',
+        'https://www.sgorj.ro/feed/',
         
         // Radiouri
         'https://www.radiocampus.ro/feed/',
@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'https://www.pandurul.ro/feed.rss': 'Pandurul',
             'https://www.gorjexpress.ro/feed/': 'Gorj Express',
             'https://www.ziaruldegorj.ro/feed/': 'Ziarul de Gorj',
-            'https://www.gorjeanul.ro/feed/category/actualitate/feed/': 'Gorjeanul - Actualitate',
             'https://www.stirigorj.ro/feed/': 'Stiri Gorj',
             'https://www.gorjmedia.ro/feed/': 'Gorj Media',
+            'https://www.sgorj.ro/feed/': 'Știrile Gorjului',
 
             // Radiouri
             'https://www.radiocampus.ro/feed/': 'Radio Campus',
