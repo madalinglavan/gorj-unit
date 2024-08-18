@@ -195,7 +195,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const content = item.content || item.description || 'Conținut indisponibil';
         const description = document.createElement('p');
-        description.innerHTML = highlightText(content, searchInput ? searchInput.value : '');
+
+        if (content.length > 1000) {
+            description.innerHTML = highlightText(content.slice(0, 1000), searchInput ? searchInput.value : '') + '...';
+
+            const readMoreButton = document.createElement('button');
+            readMoreButton.textContent = 'Citește mai mult';
+            readMoreButton.classList.add('read-more-button');
+
+            readMoreButton.addEventListener('click', function() {
+                description.innerHTML = highlightText(content, searchInput ? searchInput.value : '');
+                readMoreButton.style.display = 'none';
+            });
+
+            description.appendChild(readMoreButton);
+        } else {
+            description.innerHTML = highlightText(content, searchInput ? searchInput.value : '');
+        }
 
         if (item.author) {
             const author = document.createElement('p');
@@ -209,15 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
             pubDate.classList.add('news-date');
             pubDate.textContent = `Publicat pe: ${new Date(item.pubDate).toLocaleDateString()}`;
             newsItem.appendChild(pubDate);
-        }
-
-        if (!item.content) {
-            const readMore = document.createElement('a');
-            readMore.href = item.link;
-            readMore.target = '_blank';
-            readMore.classList.add('read-more-button');
-            readMore.textContent = 'Citește mai mult';
-            description.appendChild(readMore);
         }
 
         const shareButton = document.createElement('button');
