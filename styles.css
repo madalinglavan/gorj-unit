@@ -19,6 +19,14 @@ html, body {
 header{
     margin-bottom: 40px;
 }
+.wrap-stiri-locale,
+.wrap-weather-list{
+    flex-direction: column;
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    overflow-y: scroll;
+}
 .navbar {
     display: flex;
     justify-content:space-evenly;
@@ -86,7 +94,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
+    margin: 5px auto;
     max-width: 400px;
 }
 
