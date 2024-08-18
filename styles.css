@@ -14,11 +14,10 @@ html, body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family:'Poppins', 'Segoe UI', sans-serif;
-    font-size: 12pt;
     text-align: center;
 }
 header{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .navbar {
     display: flex;
@@ -94,7 +93,6 @@ header{
 #search-input {
     width: 100%;
     padding: 5px 10px;
-    font-size: 16px;
     border: 2px solid #ccc;
     border-radius: 25px;
     outline: none;
@@ -129,7 +127,6 @@ section:hover {
 /* Stiluri pentru titluri secțiuni */
 section h2 {
     margin-bottom: 15px;
-    font-size: 2em;
     color: var(--primary-color);
     border-bottom: 3px solid var(--secondary-color);
     padding-bottom: 10px;
@@ -147,7 +144,6 @@ section h2 {
 }
 /* Stiluri pentru sursa de știri */
 .news-source {
-    font-size: 0.9em;
     color: var(--secondary-color);
     margin-top: 15px;
     border-top: 1px solid var(--border-color);
@@ -203,7 +199,7 @@ section h2 {
 }
 
 .news-item h2 {
-    font-size: 1.8em;
+    font-size: 1.3em;
     color: var(--primary-color);
     margin-bottom: 10px;
     margin-top: 20px;
@@ -308,61 +304,130 @@ section h2 {
         transform: scale(1.1);
     }
 }
-#despre-gorj {
+#about-gorj {
     line-height: 1.6;
-    font-size: 1.4rem;
     color: #333;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
-#despre-gorj:hover{
-    background-color: #000000;
+#about-gorj:hover{
     color: var(--text-color);
 }
 
-#despre-gorj h3, #despre-gorj h4 {
+#about-gorj h3, #about-gorj h4 {
     color: #2a2a2a;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
 
-#despre-gorj p {
+#about-gorj p {
     margin-bottom: 15px;
 }
 
-#despre-gorj strong {
-    color: #0056b3;
+#about-gorj strong {
+    color: var(--hover-color);
+    text-shadow: 0px 1px black;
 }
 
-#despre-gorj ul {
+#about-gorj ul {
     list-style-type: disc;
     padding-left: 20px;
     margin-bottom: 15px;
 }
 
-#despre-gorj ul li {
+#about-gorj ul li {
     margin-bottom: 10px;
 }
 
-#despre-gorj h3 {
+#about-gorj h3 {
     font-size: 1.5em;
     margin-top: 30px;
 }
 
-#despre-gorj h4 {
+#about-gorj h4 {
     font-size: 1.2em;
     margin-top: 20px;
 }
 
-#despre-gorj p strong {
+#about-gorj p strong {
     font-size: 1.2em;
 }
 
-#despre-gorj p:last-of-type {
+#about-gorj p:last-of-type {
     font-style: italic;
     font-weight: normal;
+}
+.article-about-gorj{
+    background-color: var(--text-color);
+    color: #000;
+}
+.title-gorj{
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+align-items: center;
+}
+.title-gorj img{
+    width: 100px;
+}
+.orasele-gorj ul, .comunele-gorj ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.orasele-gorj ul li, .comunele-gorj ul li {
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.orasele-gorj ul li a, .comunele-gorj ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.orasele-gorj ul li a:hover, .comunele-gorj ul li a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .orasele-gorj ul, .comunele-gorj ul {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .orasele-gorj ul, .comunele-gorj ul {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        font-size: 12px;
+    }
+}
+
+#map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #f0f0f0; /* Optional: a background color while loading */
+    margin: 20px; /* Optional: space below the map */
+}
+
+#map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 mark {
@@ -554,7 +619,7 @@ mark {
     }
     .news-item h2{
         font-style: italic;
-        text-shadow: 0 1px 2px rgb(104, 97, 97);
+        text-shadow: 0 1px 2px rgb(197, 197, 197);
     }
     .news-item p{
         width: 98%;
@@ -562,10 +627,4 @@ mark {
         align-items: center;
         margin-left: 50%;
         transform: translate(-50%);
-        font-size: 18px;
-    }
-}
-
-body {
-    padding-top: 60px; /* Pentru a evita ca conținutul să fie acoperit de navbar */
 }
