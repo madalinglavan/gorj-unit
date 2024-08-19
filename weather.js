@@ -94,7 +94,7 @@ async function updateWeather() {
             // Afișează informațiile în <div class="right-home-panel">
             const rightPanel = document.querySelector('.right-home-panel');
             rightPanel.innerHTML = `
-                <h3>Municipiul ${weather.name}</h3>
+                <h3> ${weather.name}</h3>
                 ${getWeatherIcon(weather.weather, weather.isDaytime)}
                 <span class="temperature">${weather.temperature}°C</span>
             `;

@@ -26,25 +26,37 @@ header{
     height: 200px;
     margin: 0 auto;
     display: flex;
-    background-color: #00000033;
+    justify-content: space-between;
 }
 .left-home-panel{
-    width: 70%;
+    width: 33%;
     height: 100%;
-    
+    display: flex;
+    justify-content: start;
+}
+.left-home-panel img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.center-home-panel{
+    width: 33%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+}
+.center-home-panel img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 .right-home-panel {
     width: 30%; /* Dimensiunea widget-ului */
     padding: 10px; /* Spațiu interior */
     border-radius: 10px; /* Colțuri rotunjite */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Umbre pentru efect 3D */
     text-align: center; /* Aliniază textul la centru */
     font-family: 'Arial', sans-serif; /* Font standard */
     margin: 10px auto; /* Spațiu deasupra și dedesubt, centrare pe orizontală */
-    background-image: url(img/Coloana-Infinitului.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 .right-home-panel h3 {
@@ -745,15 +757,11 @@ mark {
         margin: 0 auto;
         display: flex;
     }
-    .left-home-panel{
-        width: 65%;
-        height: 100%;
-    }
+ 
     .right-home-panel {
         width: 35%; /* Dimensiunea widget-ului */
         padding: 0px; /* Spațiu interior */
         border-radius: 10px; /* Colțuri rotunjite */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Umbre pentru efect 3D */
         text-align: center; /* Aliniază textul la centru */
         font-family: 'Arial', sans-serif; /* Font standard */
         margin: 3px auto; /* Spațiu deasupra și dedesubt, centrare pe orizontală */
@@ -769,7 +777,7 @@ mark {
     }
     
     .right-home-panel .temperature {
-        font-size: 24px; /* Dimensiunea fontului pentru temperatura */
+        font-size:18px; /* Dimensiunea fontului pentru temperatura */
         font-weight: bold; /* Font îngroșat */
         display: block; /* Asigură că temperatura este pe o linie separată */
         margin-top: 10px; /* Spațiu deasupra temperaturii */
