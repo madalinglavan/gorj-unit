@@ -123,9 +123,7 @@ section {
     line-height: 1.6; /* Îmbunătățim lizibilitatea prin creșterea înălțimii liniei */
 }
 
-section:hover {
-    
-}
+
 
 /* Stiluri pentru titluri secțiuni */
 section h2 {
@@ -471,6 +469,33 @@ mark {
     color: rgb(255, 255, 255); /* Asigură-te că textul este vizibil */
 }
 /* Stil pentru lista de vreme */
+.read-more-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Albastru intens */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.read-more-button:hover {
+    background-color: #0056b3; /* Albastru închis */
+    transform: scale(1.05);
+}
+
+.read-more-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5); /* Efect de glow */
+}
+
+.read-more-button:active {
+    background-color: #004085; /* Albastru și mai închis */
+    transform: scale(1);
+}
 
 #weather-list {
     display: grid;
