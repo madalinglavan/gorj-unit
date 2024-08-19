@@ -90,7 +90,7 @@ async function updateWeather() {
         }
 
         // Verifică dacă orașul este Târgu Jiu
-        if (weather.name === 'Târgu Jiu') {
+        if (weather.name === 'Târgu Jiu' ) {
             // Afișează informațiile în <div class="right-home-panel">
             const rightPanel = document.querySelector('.right-home-panel');
             rightPanel.innerHTML = `

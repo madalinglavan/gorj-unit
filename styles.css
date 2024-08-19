@@ -23,43 +23,48 @@ header{
 }
 .home-panel{
     width: 98%;
-    height: 250px;
+    height: 200px;
     margin: 0 auto;
     display: flex;
+    background-color: #00000033;
 }
 .left-home-panel{
-    width: 50%;
+    width: 70%;
     height: 100%;
-    background-image: url();
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    
 }
 .right-home-panel {
-    width: 50%; /* Dimensiunea widget-ului */
-    padding: 15px; /* Spațiu interior */
+    width: 30%; /* Dimensiunea widget-ului */
+    padding: 10px; /* Spațiu interior */
     border-radius: 10px; /* Colțuri rotunjite */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Umbre pentru efect 3D */
     text-align: center; /* Aliniază textul la centru */
     font-family: 'Arial', sans-serif; /* Font standard */
-    margin: 20px auto; /* Spațiu deasupra și dedesubt, centrare pe orizontală */
+    margin: 10px auto; /* Spațiu deasupra și dedesubt, centrare pe orizontală */
+    background-image: url(img/Coloana-Infinitului.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .right-home-panel h3 {
     font-size: 18px; /* Dimensiunea fontului pentru titlu */
     color: #ffffff; /* Culoarea textului */
+    text-shadow: 2px 2px 4px black;
     margin-bottom: 10px; /* Spațiu sub titlu */
 }
 
 .right-home-panel .weather-icon {
     font-size: 48px; /* Dimensiunea icoanei vremea */
-    color: #f39c12; /* Culoarea icoanei (poți schimba culoarea dacă dorești) */
+    color: #ffffff; /* Culoarea icoanei (poți schimba culoarea dacă dorești) */
+    text-shadow: 2px 2px 4px black;
 }
 
 .right-home-panel .temperature {
     font-size: 24px; /* Dimensiunea fontului pentru temperatura */
     font-weight: bold; /* Font îngroșat */
-    color:#fff; /* Culoarea textului pentru temperatură */
+    color:#ffffff; /* Culoarea textului pentru temperatură */
+    text-shadow: 2px 2px 4px black;
     display: block; /* Asigură că temperatura este pe o linie separată */
     margin-top: 10px; /* Spațiu deasupra temperaturii */
 }
@@ -733,5 +738,40 @@ mark {
         align-items: center;
         margin-left: 50%;
         transform: translate(-50%);
+    }
+    .home-panel{
+        width: 98%;
+        height: 110px;
+        margin: 0 auto;
+        display: flex;
+    }
+    .left-home-panel{
+        width: 65%;
+        height: 100%;
+    }
+    .right-home-panel {
+        width: 35%; /* Dimensiunea widget-ului */
+        padding: 0px; /* Spațiu interior */
+        border-radius: 10px; /* Colțuri rotunjite */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Umbre pentru efect 3D */
+        text-align: center; /* Aliniază textul la centru */
+        font-family: 'Arial', sans-serif; /* Font standard */
+        margin: 3px auto; /* Spațiu deasupra și dedesubt, centrare pe orizontală */
+    }
+    
+    .right-home-panel h3 {
+        font-size: 12px; /* Dimensiunea fontului pentru titlu */
+        margin-bottom: 7px; /* Spațiu sub titlu */
+    }
+    
+    .right-home-panel .weather-icon {
+        font-size: 24px; /* Dimensiunea icoanei vremea */
+    }
+    
+    .right-home-panel .temperature {
+        font-size: 24px; /* Dimensiunea fontului pentru temperatura */
+        font-weight: bold; /* Font îngroșat */
+        display: block; /* Asigură că temperatura este pe o linie separată */
+        margin-top: 10px; /* Spațiu deasupra temperaturii */
     }
 }
