@@ -621,7 +621,7 @@ mark {
         right: 0;
         height: 100vh;
         top: 0;
-        width: 35%; 
+        width: 50%; 
         flex-direction: column;
         align-items: flex-end; /* Aliniere la stânga */
         justify-content: center;

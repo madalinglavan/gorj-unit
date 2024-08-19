@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input'); // Optional: search input element
 
     const rssUrls = [
-        'https://primaria-bustuchin.ro/feed/',      // Bustuchin
-        'https://www.targujiu.ro/feed/',            // Târgu Jiu
+        'https://primaria-bustuchin.ro/documente/feed/',      // Bustuchin
+        'https://www.targujiu.ro/documente/feed/',            // Târgu Jiu
         'https://www.primariamotru.ro/feed',        // Motru
         'https://www.bumbesti-jiu.ro/feed',         // Bumbești-Jiu
         'https://www.primariarovinari.ro/feed',     // Rovinari
