@@ -88,11 +88,24 @@ async function updateWeather() {
                 <span class="temperature">${weather.temperature}°C</span>
             `;
         }
-        weatherList.appendChild(listItem);
+
+        // Verifică dacă orașul este Târgu Jiu
+        if (weather.name === 'Târgu Jiu') {
+            // Afișează informațiile în <div class="right-home-panel">
+            const rightPanel = document.querySelector('.right-home-panel');
+            rightPanel.innerHTML = `
+                <h3>Municipiul ${weather.name}</h3>
+                ${getWeatherIcon(weather.weather, weather.isDaytime)}
+                <span class="temperature">${weather.temperature}°C</span>
+            `;
+        } else {
+            weatherList.appendChild(listItem);
+        }
     });
 
     loader.style.display = 'none';
 }
+
 
 document.getElementById('refresh-button').addEventListener('click', updateWeather);
 
