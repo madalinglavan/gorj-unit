@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorj-Unit</title>
+    <script src="script.js" defer></script>
+    <script src="hamburger.js" defer></script>
+    <script src="weather.js" defer></script>
+    <script src="education.js" defer></script>
+    <script src="primarii.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Gorj-Unit</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Acasa</a></li>
+                <li><a href="#about-gorj">Judetul Gorj</a></li>
+                <li><a href="#turism">Turism</a></li>
+                <li><a href="#business">Business</a></li>
+                <br>
+                <li><a href="#education">Unitati de invatamant</a></li>
+                <li><a href="#primarii"></a></li>
+                <li><a href="#stiri-locale">Știri</a></li>
+                <li><a href="#weather-list">Vremea</a></li>
+                <li><a href="#primarii">Avizier Primarii</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>TITLURI | Știri Locale  </h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Caută știri...">
+        </div>
+            <section id="stiri-locale">
+                <div id="loading-spinner"></div>
+            </section>
+
+        <h1>Unitati de invatamant</h1>
+        <section id="education">
+            <div id="loading-spinner"></div>
+        </section>
+        <h1>Avizier-Primarii : </h1>
+        <section id="primarii">
+            <div id="loading-spinner"></div>
+        </section>
+        
+
+            <div id="loader">Încărcare...</div>
+            <h1>Vremea</h1>
+            <button id="refresh-button">Actualizează</button>
+            <ul id="weather-list"></ul>
+
+
+        <section id="about-gorj">
+                <div class="article-about-gorj">
+                    <div class="title-gorj">
+                        <h1>Județul Gorj</h1>
+                    <img src="img/Stema_Gorj.svg" alt="">
+                    </div>
+                    <h3>Municipiul Reședință</h3>
+                <p>Reședința județului Gorj este <strong>Târgu Jiu</strong>, un oraș cu o mare importanță culturală și istorică.</p>
+
+                <h3>Număr de Locuitori</h3>
+                <p>Populația totală a județului Gorj este de aproximativ <strong>330.000 de locuitori</strong>, conform celor mai recente date disponibile.</p>
+
+                    <h3>Orașele din Județul Gorj <p class="check-website">atingeti numele orasului pentru site oficial</p></h3>
+                    <p>Județul Gorj include <strong>9 orașe</strong> </p>
+                    <div class="orasele-gorj">
+                        <ul>
+                            <li><a href="https://www.targujiu.ro" target="_blank">Târgu Jiu </a></li>
+                            <li><a href="https://www.primariamotru.ro" target="_blank">Motru</a></li>
+                            <li><a href="https://www.bumbesti-jiu.ro" target="_blank">Bumbești-Jiu</a></li>
+                            <li><a href="https://www.primariarovinari.ro" target="_blank">Rovinari</a></li>
+                            <li><a href="https://www.primariacarbunesti.ro" target="_blank">Târgu Cărbunești</a></li>
+                            <li><a href="https://www.primariatismana.ro" target="_blank">Tismana</a></li>
+                            <li><a href="https://www.primariaturceni.ro" target="_blank">Turceni</a></li>
+                            <li><a href="https://www.primarianovaci.ro" target="_blank">Novaci</a></li>
+                            <li><a href="https://www.primarieticleni.ro" target="_blank">Țicleni</a></li>
+                        </ul>
+                    </div>
+
+                    <h3>Comunele din Județul Gorj <p class="check-website">atingeti numele comunei pentru site oficial</p></h3>
+                    <p>Județul Gorj este format din <strong>61 de comune</strong>, fiecare având mai multe sate componente:</p>
+                    <div class="comunele-gorj">
+                        <ul>
+                            <li><a href="https://www.primariaalbeni.ro" target="_blank">Albeni</a></li>
+                            <li><a href="https://www.primariaalimpesti.ro" target="_blank">Alimpești</a></li>
+                            <li><a href="https://www.primariaaninoasa.ro" target="_blank">Aninoasa</a></li>
+                            <li><a href="https://www.primariaarcani.ro" target="_blank">Arcani</a></li>
+                            <li><a href="https://www.pbf.ro/" target="_blank">Baia de Fier</a></li>
+                            <li><a href="https://www.primariabalanesti.ro" target="_blank">Bălănești</a></li>
+                            <li><a href="https://www.primariabalesti.ro" target="_blank">Bălești</a></li>
+                            <li><a href="https://www.primariabarbatesti.ro" target="_blank">Bărbătești</a></li>
+                            <li><a href="https://www.primariabengesticiocadia.ro" target="_blank">Bengești-Ciocadia</a></li>
+                            <li><a href="https://www.primariaberlesti.ro" target="_blank">Berlești</a></li>
+                            <li><a href="https://www.primariabalteni.ro" target="_blank">Bâlteni</a></li>
+                            <li><a href="https://www.primariabolbosi.ro" target="_blank">Bolboși</a></li>
+                            <li><a href="https://www.primariaborascu.ro" target="_blank">Borăscu</a></li>
+                            <li><a href="https://www.primariabranesti.ro" target="_blank">Brănești</a></li>
+                            <li><a href="https://comunabumbestipitic.ro/" target="_blank">Bumbești-Pițic</a></li>
+                            <li><a href="https://www.primaria-bustuchin.ro" target="_blank">Bustuchin</a></li>
+                            <li><a href="https://www.primaria-calnic.ro" target="_blank">Câlnic</a></li>
+                            <li><a href="https://www.primariacapreni.ro" target="_blank">Căpreni</a></li>
+                            <li><a href="https://www.primariacatunele.ro" target="_blank">Cătunele</a></li>
+                            <li><a href="https://www.primariaciuperceni.ro" target="_blank">Ciuperceni</a></li>
+                            <li><a href="https://www.primariacrasna.ro" target="_blank">Crasna</a></li>
+                            <li><a href="https://www.comunacruset.ro" target="_blank">Crușeț</a></li>
+                            <li><a href="https://www.primariadanciulesti.ro" target="_blank">Dănciulești</a></li>
+                            <li><a href="https://www.comunadanesti.ro" target="_blank">Dănești</a></li>
+                            <li><a href="https://www.primariadragotesti.ro" target="_blank">Drăgotești</a></li>
+                            <li><a href="https://www.primaria-dragutesti.ro" target="_blank">Drăguțești</a></li>
+                            <li><a href="https://primariafarcasesti-gj.ro/" target="_blank">Fărcășești</a></li>
+                            <li><a href="https://www.primariaglogova.ro" target="_blank">Glogova</a></li>
+                            <li><a href="https://www.comunagodinesti.ro" target="_blank">Godinești</a></li>
+                            <li><a href="https://hurezani.eccompany.ro/" target="_blank">Hurezani</a></li>
+                            <li><a href="https://www.primariaionesti.ro" target="_blank">Ionești</a></li>
+                            <li><a href="https://www.primariajupinesti.ro/" target="_blank">Jupânești</a></li>
+                            <li><a href="https://www.primarialelesti.ro" target="_blank">Lelești</a></li>
+                            <li><a href="https://www.primarialicurici.ro" target="_blank">Licurici</a></li>
+                            <li><a href="https://www.primaria-logresti.ro" target="_blank">Logrești</a></li>
+                            <li><a href="https://www.primariamatasari.ro" target="_blank">Mătăsari</a></li>
+                            <li><a href="https://www.primariamusetesti.ro" target="_blank">Mușetești</a></li>
+                            <li><a href="https://www.comunanegomir.ro" target="_blank">Negomir</a></li>
+                            <li><a href="https://www.primariapades.ro" target="_blank">Padeș</a></li>
+                            <li><a href="https://www.pestisani.ro" target="_blank">Peștișani</a></li>
+                            <li><a href="https://www.primariaplopsoru.ro" target="_blank">Plopșoru</a></li>
+                            <li><a href="https://www.comunapolovragi.ro" target="_blank">Polovragi</a></li>
+                            <li><a href="https://www.primariaprigoria.ro" target="_blank">Prigoria</a></li>
+                            <li><a href="http://www.rosiadeamaradia.ro/" target="_blank">Roșia de Amaradia</a></li>
+                            <li><a href="https://www.runcugorj.ro" target="_blank">Runcu</a></li>
+                            <li><a href="https://www.primariasacelu.ro" target="_blank">Săcelu</a></li>
+                            <li><a href="https://www.primariasamarinesti.ro" target="_blank">Samarinești</a></li>
+                            <li><a href="https://www.primariasaulesti.ro" target="_blank">Săulești</a></li>
+                            <li><a href="https://www.primaria-schela.ro" target="_blank">Schela</a></li>
+                            <li><a href="https://www.primariascoarta.ro" target="_blank">Scoarța</a></li>
+                            <li><a href="https://www.primariaslivilestigorj.ro" target="_blank">Slivilești</a></li>
+                            <li><a href="https://www.primaria-stanesti.ro" target="_blank">Stănești</a></li>
+                            <li><a href="http://primariastejari.ro/" target="_blank">Stejari</a></li>
+                            <li><a href="https://www.comunastoina.ro" target="_blank">Stoina</a></li>
+                            <li><a href="https://www.primariatantareni.ro" target="_blank">Țânțăreni</a></li>
+                            <li><a href="https://www.primariatelesti-gorj.ro" target="_blank">Telești</a></li>
+                            <li><a href="https://www.primaria-turburea.ro" target="_blank">Turburea</a></li>
+                            <li><a href="https://turcinesti.ro/" target="_blank">Turcinești</a></li>
+                            <li><a href="https://www.primariaurdari.ro" target="_blank">Urdari</a></li>
+                            <li><a href="https://www.primariavagiulesti.ro" target="_blank">Văgiulești</a></li>
+                            <li><a href="http://www.comunavladimir.ro" target="_blank">Vladimir</a></li>
+                        </ul>
+                    </div>
+
+                <h3>Religia</h3>
+                <p>Majoritatea locuitorilor din județul Gorj sunt de religie <strong>ortodoxă</strong>, cu mici comunități de alte confesiuni.</p>
+
+                <h3>Suprafața</h3>
+                <p>Județul Gorj acoperă o suprafață totală de aproximativ <strong>5.602 km²</strong>, fiind considerat un județ de dimensiune medie în România.</p>
+                            <div id="map-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d274684.2807225069!2d22.530783083858523!3d45.07085559806268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474e34d4bafe1c3f%3A0x62358ae0f589f212!2sGorj%20County!5e0!3m2!1sen!2sro!4v1694267925334!5m2!1sen!2sro" 
+                                    width="600" 
+                                    height="450" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            
+                            <h2>Importanță Geografică și Culturală</h2>
+                            <p>Județul Gorj, situat în sud-vestul României, în regiunea istorică Oltenia, reprezintă un spațiu de o importanță deosebită atât din punct de vedere geografic, cât și cultural. Acest județ este delimitat de:</p>
+                            <ul>
+                                <li><strong>Munții Parâng</strong> la nord – parte din Carpații Meridionali, oferind o barieră naturală și un peisaj montan impresionant.</li>
+                                <li><strong>Câmpia Olteniei</strong> la sud – una dintre cele mai fertile regiuni ale țării, ce susține o agricultură diversificată și productivă.</li>
+                            </ul>
+                            <p>Geografic, județul Gorj se remarcă prin:</p>
+                            <ul>
+                                <li><strong>Diversitatea reliefului</strong> – incluzând zone montane, deluroase și câmpii, ce îi conferă un potențial turistic considerabil.</li>
+                                <li><strong>Munții Parâng</strong> – cu vârfuri ce depășesc 2.500 de metri, oferind oportunități pentru turismul de iarnă și drumeții, și protejând un ecosistem variat, cu specii rare de floră și faună.</li>
+                                <li><strong>Zonele de câmpie</strong> – ideale pentru activități agricole, cum ar fi cultura cerealelor și a viței-de-vie.</li>
+                            </ul>
+                            <p>Cultural, județul Gorj este un veritabil tezaur național, fiind locul de naștere al:</p>
+                            <ul>
+                                <li><strong>Constantin Brâncuși</strong> – sculptorul renumit, ale cărui lucrări, inclusiv <em>Ansamblul Monumental de la Târgu Jiu</em>, sunt printre cele mai importante complexe sculpturale moderne din lume.</li>
+                            </ul>    
+                            <p>Râul Jiu străbate județul Gorj și joacă un rol esențial în:</p>        
+                            <ul>
+                                <li><strong>Configurarea geografică</strong> a județului, influențând evoluția așezărilor umane și servind ca linie de apărare în istorie.</li>
+                            </ul>            
+                            <p>Importanța județului Gorj în contextul național se reflectă nu doar în patrimoniul său natural și cultural, dar și în:</p>           
+                            <ul>
+                                <li><strong>Contribuțiile economice</strong> – Gorjul a fost un centru important al extracției de cărbune, contribuind la dezvoltarea industrială a României, în special în perioadele moderne și contemporane.</li>
+                            </ul>           
+                            <p>În concluzie, județul Gorj este un teritoriu cu o moștenire bogată, care îmbină armonios elementele naturale cu cele culturale și istorice, oferind o perspectivă complexă asupra identității românești.</p>            
+                            
+                            <h2>Preistorie și Antichitate</h2>
+                            <p>Teritoriul județului Gorj a fost locuit încă din cele mai vechi timpuri, având un rol semnificativ în dezvoltarea civilizației din regiunea Olteniei. Evoluția acestui teritoriu poate fi împărțită în mai multe perioade istorice importante:</p>
+                            <ul>
+                                <li><strong>Paleolitic (până acum aproximativ 12.000 de ani)</strong> – Primele urme ale prezenței umane în această zonă includ comunități de vânători-culegători care au exploatat resursele naturale locale. Artefactele descoperite în peșterile și adăposturile din Munții Parâng oferă indicii valoroase despre modul de viață al acestor grupuri umane timpurii.</li>
+                                <li><strong>Neolitic (aproximativ 6.000 - 2.000 î.Hr.)</strong> – Perioada a marcat dezvoltarea primelor comunități sedentare de agricultori și păstori. Cultura materială, reflectată în ceramica și uneltele descoperite în diverse situri arheologice, indică legături comerciale și culturale cu alte regiuni ale Europei de Sud-Est. Descoperirile notabile includ vasele de ceramică decorate cu motive geometrice complexe, specifice culturii Vinca și altor culturi neolitice.</li>
+                                <li><strong>Epoca Bronzului (aproximativ 2.000 - 1.200 î.Hr.)</strong> – Județul Gorj a devenit un punct important în rețeaua de schimburi comerciale și culturale din Balcani și Europa Centrală. Descoperirile arheologice, cum ar fi depozitele de obiecte din bronz (inclusiv arme, unelte și podoabe), sugerează existența unor elite locale care controlau resursele și comerțul în zonă, reflectând o evoluție tehnologică și diversificare a meșteșugurilor.</li>
+                                <li><strong>Antichitate</strong> – Teritoriul județului Gorj a intrat sub influența civilizației dacice, parte integrantă a regatului condus de regele Burebista și, ulterior, de Decebal. Dacii au ridicat numeroase fortificații și așezări pe înălțimile muntoase, precum cele din zona Polovragi sau Peștișani. Aceștia au dezvoltat o cultură materială distinctă, caracterizată prin ceramică de calitate, unelte din fier și podoabe din aur și argint.</li>
+                                <li><strong>Cucerirea Daciei de către romani (106 d.Hr.)</strong> – Județul Gorj a fost inclus în provincia romană Dacia Malvensis. Romanii au construit drumuri, forturi și așezări pentru a controla și exploata resursele naturale ale regiunii, inclusiv minele de aur și argint. Castrul roman de la Bumbești-Jiu a servit ca punct de control strategic pe drumul ce lega Sarmizegetusa, capitala Daciei romane, de Dunăre. Influența romană a condus la romanizarea populației locale, lăsând urme adânci în cultura și limba locuitorilor.</li>
+                            </ul>
+                            <p>În concluzie, perioada preistorică și antică a județului Gorj reflectă o evoluție continuă și complexă a civilizațiilor care au populat această zonă. De la comunitățile timpurii de vânători-culegători, la dezvoltarea civilizației dacice și până la influența romană, Gorjul a fost mereu un loc de întâlnire a culturilor și un spațiu de importanță strategică.</p>
+                            
+                            
+                            <h2>Evul Mediu</h2>
+                            <p>Începând cu perioada medievală, județul Gorj a jucat un rol crucial în consolidarea structurilor politice și sociale ale Țării Românești, fiind un teritoriu de mare importanță strategică și economică. Amplasat la granița dintre regiunile subcarpatice și câmpia Olteniei, Gorjul a devenit un punct de convergență pentru diverse influențe culturale și economice, consolidându-se ca un nucleu de putere locală.</p>
+                            <h3>Organizarea administrativă și importanța strategică</h3>
+                            <p>Prima atestare documentară a județului Gorj datează din secolul al XV-lea, în timpul domniei lui Mircea cel Bătrân (1386–1418), voievod al Țării Românești. În această perioadă, Gorjul făcea parte din sistemul administrativ al Țării Românești, fiind organizat în cnezate și voievodate, unități teritoriale conduse de lideri locali. Aceste structuri administrative reflectă un model de organizare bazat pe legături de rudenie și alianțe între diverse familii nobile locale.</p>
+                            <p>Datorită poziției sale geografice, Gorjul a avut o importanță strategică în apărarea granițelor nordice ale Țării Românești împotriva invaziilor externe, în special cele ale turcilor otomani. Cetățile și fortificațiile ridicate de-a lungul principalelor căi de acces în regiune, cum ar fi cea de la Polovragi, aveau rolul de a proteja populația locală și de a asigura controlul asupra drumurilor comerciale care traversau munții.</p>
+                            <h3>Dezvoltarea economică și viața socială</h3>
+                            <p>Evul Mediu a fost, de asemenea, o perioadă de dezvoltare economică pentru județul Gorj. Agricultura, păstoritul și exploatarea resurselor naturale, precum lemnul și mineralele, constituiau principalele activități economice. Totodată, localnicii se ocupau și de meșteșuguri, cum ar fi prelucrarea lemnului, fierăria și țesutul. Satele și târgurile din Gorj, în special Târgu Jiu, au devenit centre comerciale importante, unde se desfășurau târguri periodice care atrăgeau negustori din întreaga regiune.</p>
+                            <p>Viața socială în județul Gorj era marcată de existența unui strat nobil bine definit, care deținea moșii întinse și exercita o influență semnificativă asupra comunităților locale. Acești nobili, numiți boieri, aveau roluri administrative, juridice și militare în cadrul voievodatelor, și erau adesea patroni ai bisericilor și mănăstirilor din regiune.</p>
+                            <h3>Cultura și spiritualitatea</h3>
+                            <p>Din punct de vedere cultural, Evul Mediu în județul Gorj a fost o perioadă de înflorire a vieții spirituale și culturale. Mănăstirile și bisericile din Gorj, cum ar fi Mănăstirea Tismana, fondată în secolul al XIV-lea de Sfântul Nicodim de la Tismana, au jucat un rol crucial în păstrarea și transmiterea tradițiilor ortodoxe, precum și în educarea tinerelor generații. Aceste așezăminte monahale nu erau doar centre religioase, ci și focare de cultură, unde se copiau și se păstrau manuscrise valoroase.</p>
+                            <p>În această perioadă, tradițiile populare și obiceiurile locuitorilor din Gorj s-au consolidat, formând un patrimoniu cultural bogat, transmis din generație în generație. Folclorul local, cuprinzând balade, doine și legende, reflectă o lume plină de credințe și superstiții, adânc înrădăcinate în viața cotidiană a comunităților rurale.</p>
+                            <h3>Personalități istorice</h3>
+                            <p>În timpul Evului Mediu, județul Gorj a fost locul de origine al unor figuri importante ale istoriei românești. Printre aceștia se numără Vlad Țepeș (Dracula), care a folosit fortificațiile din Gorj ca puncte strategice în luptele sale împotriva invadatorilor otomani. De asemenea, boierii din familia Craioveștilor, originari din Gorj, au jucat un rol esențial în politica Țării Românești, contribuind la stabilitatea și dezvoltarea acesteia în perioadele de criză.</p>
+
+
+                            <h2>Epoca Modernă</h2>
+                            <h3>Revoluția de la 1821</h3>
+                            <p>Județul Gorj joacă un rol crucial în contextul Revoluției de la 1821, fiind locul de naștere al lui Tudor Vladimirescu, liderul mișcării revoluționare care a marcat începutul procesului de eliberare națională în Țările Române. Tudor Vladimirescu s-a născut în satul Vladimiri, situat în apropierea orașului Târgu Jiu. Revoluția de la 1821, condusă de Vladimirescu, a fost o revoltă împotriva dominației fanariote și a visat să reformeze administrația și societatea din Principatele Române. Deși mișcarea nu a avut succesul scontat, a pregătit terenul pentru reformele ulterioare și unificarea Țărilor Române.</p>
+                            <h3>Perioada interbelică</h3>
+                            <p>În perioada interbelică, județul Gorj a cunoscut o dezvoltare economică și socială semnificativă. În această perioadă, regiunea a beneficiat de investiții în infrastructură și a început să se industrializeze, deși în mare parte într-un ritm mai lent comparativ cu alte zone ale țării. Târgu Jiu și alte localități din județ au început să se dezvolte ca centre comerciale și industriale.</p>
+                            <p>O personalitate marcantă a acestei perioade este Constantin Brâncuși, unul dintre cei mai renumiți sculptori ai secolului XX. Deși a trăit și lucrat în Franța, Brâncuși a rămas profund legat de originile sale gorjene. La Târgu Jiu, Brâncuși a creat Ansamblul Monumental, un complex de opere de artă publică care include Coloana Infinitului, Poarta Sărutului și Masa Tăcerii. Aceste lucrări sunt considerate pietre de hotar în sculptura modernă și au adus un prestigiu internațional județului Gorj.</p>
+                            <h3>Al Doilea Război Mondial</h3>
+                            <p>În timpul celui de-al Doilea Război Mondial, județul Gorj a fost implicat indirect în conflictul global. În perioada războiului, regiunea a fost afectată de bombardamente și conflicte locale, dar a fost și locul unor acte de rezistență împotriva ocupației. Comunitățile locale au fost implicate în activități de sprijin pentru front și în mișcări de partizanat care au luptat împotriva regimului fascist și ocupației străine.</p>
+                            <p>În această perioadă tumultuoasă, județul Gorj a făcut față provocărilor economice și sociale impuse de război, iar populația locală a demonstrat un mare spirit de solidaritate și reziliență.</p>
+                            
+                            
+                            <h2>Epoca Contemporană</h2>
+                            <h3>Perioada comunistă</h3>
+                            <p>În perioada comunistă, județul Gorj a trecut printr-o serie de schimbări majore care au avut un impact semnificativ asupra economiei și societății locale. Regimul comunist a implementat o politică agresivă de industrializare, care a vizat exploatarea intensivă a resurselor naturale ale regiunii, în special a cărbunelui și a petrolului. Astfel, Gorjul a devenit un centru important pentru industria minieră și energetică, cu dezvoltarea unor mari complexe industriale și a unor unități de extracție și procesare a resurselor naturale.</p>
+                            <p>Aceast proces de industrializare a fost însoțit de o serie de schimbări demografice, cu migrarea unor grupuri de muncitori din alte părți ale țării către Gorj, în căutarea locurilor de muncă în noile uzine și mine. De asemenea, regimul comunist a implementat politici de colectivizare a agriculturii, ceea ce a dus la formarea de cooperative agricole și schimbări semnificative în structura proprietății rurale.</p>
+                            <p>În această perioadă, autoritățile comuniste au supravegheat și controlat strâns viața culturală și socială. Activitățile culturale și tradițiile locale au fost influențate și, în multe cazuri, modificate pentru a se alinia ideologiei regimului. Totuși, județul a reușit să mențină, în anumite măsuri, aspecte ale tradițiilor și culturii locale.</p>
+                            <h3>Gorjul după Revoluția din 1989</h3>
+                            <p>După Revoluția din 1989, județul Gorj a trecut printr-o perioadă de tranziție semnificativă. Treptat, economia centralizată și controlată de stat a fost înlocuită de o economie de piață, iar această schimbare a generat atât oportunități, cât și provocări pentru județ. Privatizarea întreprinderilor de stat și restructurarea sectorului industrial au avut un impact considerabil asupra economiei locale, cu efecte directe asupra locurilor de muncă și nivelului de trai.</p>
+                            <p>Dezvoltarea turismului cultural și ecoturismului a devenit un obiectiv important în anii post-comuniști. Județul Gorj beneficiază de un patrimoniu cultural și natural bogat, iar autoritățile locale și organizațiile non-guvernamentale au început să investească în promovarea acestor resurse. Ansamblul Monumental de la Târgu Jiu, lucrările lui Constantin Brâncuși și peisajele naturale impresionante, cum ar fi Munții Parâng și Cheile Sohodolului, au devenit atracții turistice de mare valoare.</p>
+                            <p>Economia locală a început să se diversifice, cu investiții în sectorul turistic și în alte domenii, cum ar fi agricultura modernă și micile afaceri. În același timp, județul Gorj a continuat să facă față provocărilor economice și sociale, inclusiv probleme legate de reconversia profesională a muncitorilor din sectoarele de minerit și industrie.</p>
+                            <h3>Provocări și perspective</h3>
+                            <p>În prezent, județul Gorj se confruntă cu provocări legate de adaptarea la economia de piață și de gestionarea resurselor naturale într-un mod sustenabil. De asemenea, se pune accent pe revitalizarea economiei locale prin investiții în infrastructură și dezvoltarea turismului. Perspectivele pentru viitor includ promovarea unui model de dezvoltare echilibrat care să combine protecția mediului cu creșterea economică și bunăstarea comunității.</p>
+
+                            <h2>Patrimoniul Cultural și Turistic</h2>
+                            <h3>Constantin Brâncuși și Ansamblul Monumental de la Târgu Jiu</h3>
+                            <p>Constantin Brâncuși, considerat unul dintre cei mai influenți sculptori ai secolului XX, are o legătură profundă cu județul Gorj, datorită originilor sale din această regiune. Brâncuși s-a născut în satul Hobița, situat în apropiere de Târgu Jiu, și a fost influențat de tradițiile și cultura locală în dezvoltarea stilului său artistic revoluționar.</p>
+                            <p>Ansamblul Monumental de la Târgu Jiu este una dintre cele mai importante realizări ale lui Brâncuși și reprezintă o atracție culturală și turistică de renume internațional. Ansamblul este format din trei componente majore:</p>
+                            <ul>
+                                <li><strong>Coloana Infinitului:</strong> Este o structură simbolică, alcătuită dintr-o serie de module cubice dispuse vertical, care reprezintă un simbol al continuității și al transcendenței. Coloana se ridică la o înălțime de peste 29 de metri și este considerată una dintre cele mai emblematice opere ale lui Brâncuși, reflectând conceptul său de infinitate și simbolism.</li>
+                                <li><strong>Poarta Sărutului:</strong> Această lucrare reprezintă o poartă monumentală, decorată cu motive simbolice și cu două forme umane care se îmbrățișează. Este o reprezentare artistică a iubirii și a unității și servește ca un punct de intrare în ansamblul monumental.</li>
+                                <li><strong>Masa Tăcerii:</strong> Este o masă rotundă, înconjurată de scaune, care simbolizează liniștea și reflecția. Masa Tăcerii este destinată să ofere un spațiu de contemplare și meditație, fiind înconjurată de un peisaj natural care completează mesajul său artistic.</li>
+                            </ul>
+                            <p>Opera lui Brâncuși la Târgu Jiu este recunoscută ca parte integrantă a patrimoniului mondial cultural, având un impact major asupra artei contemporane și atrăgând vizitatori din întreaga lume. Ansamblul este considerat un loc sacru, nu doar pentru valoarea sa artistică, dar și pentru mesajul profund pe care îl transmite despre umanitate și spiritul uman.</p>
+                            <h3>Parcuri naturale și rezervații</h3>
+                            <p>Județul Gorj se bucură de o frumusețe naturală remarcabilă, cu o serie de parcuri naturale și rezervații care oferă oportunități excelente pentru ecoturism și activități în aer liber:</p>
+                            <ul>
+                                <li><strong>Munții Parâng:</strong> Acești munți sunt parte din Carpații Meridionali și oferă peisaje spectaculoase, trasee montane și oportunități pentru drumeții și sporturi de iarnă. Zona este cunoscută pentru biodiversitatea sa și pentru peisajele pitorești.</li>
+                                <li><strong>Cheile Sohodolului:</strong> Acest defileu este o rezervație naturală care prezintă formațiuni geologice impresionante și un peisaj deosebit. Cheile Sohodolului sunt un loc popular pentru drumeții și explorări în natură.</li>
+                                <li><strong>Defileul Jiului:</strong> Este o zonă spectaculoasă situată de-a lungul râului Jiu, cu stânci abrupte și peisaje impresionante. Defileul Jiului este un loc ideal pentru iubitorii de natură și pentru cei care doresc să exploreze frumusețea naturală a regiunii.</li>
+                            </ul>
+                            <h3>Festivaluri și tradiții locale</h3>
+                            <p>Gorjul păstrează o bogată tradiție culturală și folclorică, care se reflectă în diverse festivaluri și obiceiuri locale. Acestea sunt parte integrantă a vieții comunității și contribuie la conservarea și promovarea patrimoniului cultural al județului:</p>
+                            <ul>
+                                <li><strong>Festivalul de Folclor „Muzica și Dansul Gorjenilor”:</strong> Acest festival anual adună interpreți și ansambluri folclorice din întreaga regiune și din alte părți ale țării, oferind o platformă pentru promovarea muzicii și dansurilor tradiționale gorjenești.</li>
+                                <li><strong>Sărbătorile și obiceiurile tradiționale:</strong> În județul Gorj se păstrează numeroase tradiții legate de sărbători religioase și sezoniere, precum „Sânzienele” (sărbătoare a florilor de vară), „Moșii de Vară” (un ritual de comemorare a strămoșilor) și „Sărbătoarea Toamnei” (care celebrează recoltele).</li>
+                            </ul>
+                            <p>Aceste festivaluri și tradiții sunt importante pentru comunitate, contribuind la menținerea identității culturale și la atragerea turiștilor interesați de cultura și tradițiile locale.</p>
+
+
+                            <h2>Economia Județului Gorj Astăzi</h2>
+                            <h3>Industrie și agricultură</h3>
+                            <p>Economia județului Gorj a evoluat semnificativ în ultimele decenii, reflectând tranziția de la o economie centralizată la una de piață. În prezent, județul se caracterizează printr-o combinație de sectoare economice, fiecare având propriile sale particularități și provocări:</p>
+                            <h4>Industrie:</h4>
+                            <ul>
+                                <li><strong>Minerit:</strong> Gorjul continuă să fie un important centru pentru minerit, în special pentru extragerea cărbunelui. Complexul Energetic Oltenia, unul dintre cei mai mari producători de energie pe bază de cărbune din România, își are sediul în județ. Industria minieră este esențială pentru economia locală, dar se confruntă cu provocări legate de sustenabilitate și protecția mediului.</li>
+                                <li><strong>Energia:</strong> Producția de energie din surse fosile este dominantă în județ, dar există și inițiative pentru diversificarea surselor de energie și creșterea eficienței energetice. Proiectele de energie regenerabilă sunt în dezvoltare, cu scopul de a reduce dependența de cărbune.</li>
+                                <li><strong>Industria prelucrătoare:</strong> Deși mai puțin dominantă decât în trecut, industria prelucrătoare, inclusiv sectorul metalurgic și cel al construcțiilor, joacă încă un rol important în economia județului.</li>
+                            </ul>
+                            <h4>Agricultură:</h4>
+                            <ul>
+                                <li><strong>Agricultura tradițională:</strong> Agricultura din Gorj a fost în mod tradițional o activitate de bază pentru locuitori. Regiunea beneficiază de terenuri fertile, potrivite pentru cultivarea unor cereale, legume și plante de toamnă. Totuși, sectorul agricol se confruntă cu provocări legate de modernizare și eficiență.</li>
+                                <li><strong>Agricultura ecologică:</strong> Există un interes tot mai mare pentru agricultura ecologică și pentru dezvoltarea produselor locale, care pot aduce valoare adăugată și contribuie la atragerea turiștilor interesați de produse autentice și sustenabile.</li>
+                            </ul>
+                            <h3>Dezvoltare și investiții recente</h3>
+                            <h4>Proiecte de infrastructură:</h4>
+                            <ul>
+                                <li><strong>Infrastructura de transport:</strong> În ultimele decenii, județul Gorj a beneficiat de investiții în îmbunătățirea infrastructurii de transport, inclusiv modernizarea drumurilor și extinderea rețelelor de transport. Proiectele de infrastructură au ca scop facilitarea accesului și conectivității, aspecte esențiale pentru dezvoltarea economică.</li>
+                                <li><strong>Infrastructura turistică:</strong> Investițiile în infrastructura turistică, cum ar fi dezvoltarea de centre de informare turistică și îmbunătățirea accesului la atracții naturale și culturale, sunt priorități pentru promovarea turismului în județ.</li>
+                            </ul>
+                            <h4>Inițiative economice:</h4>
+                            <ul>
+                                <li><strong>Investiții în tehnologie și inovație:</strong> Există eforturi pentru atragerea de investiții în domeniul tehnologiei și inovației, cu scopul de a diversifica economia locală și de a crea noi locuri de muncă. Proiectele de dezvoltare tehnologică și start-up-uri sunt în creștere, contribuind la modernizarea economiei.</li>
+                                <li><strong>Dezvoltarea turismului:</strong> Turismul continuă să fie un sector de interes major, cu investiții în promovarea atracțiilor locale și în dezvoltarea de noi produse turistice. Regiunea beneficiază de un patrimoniu cultural și natural semnificativ care poate fi valorificat pentru atragerea vizitatorilor.</li>
+                            </ul>
+                            <p>În concluzie, județul Gorj se află într-o perioadă de tranziție economică, în care industrializarea istorică se îmbină cu eforturile de diversificare și modernizare economică. Provocările economice sunt echilibrate de oportunitățile de dezvoltare, iar investițiile recente în infrastructură și turism sunt esențiale pentru viitorul județului.</p>
+
+                            <h2>Concluzie</h2>
+                            <p>Județul Gorj, situat în sud-vestul României, este o regiune cu o importanță istorică și culturală deosebită, care a contribuit semnificativ la dezvoltarea țării de-a lungul timpului. Această importanță se reflectă în mai multe aspecte esențiale:</p>
+                            <h3>Importanța Istorică și Culturală</h3>
+                            <p><strong>Rădăcini istorice adânci:</strong> Gorjul este cunoscut pentru contribuția sa la istoria antică și medievală a României. De la primele așezări dacice și influența romană, până la rolul său în formarea Țării Românești și implicarea în mișcarea revoluționară de la 1821, județul a fost un punct central în evoluția istorică a regiunii.</p>
+                            <p><strong>Moștenirea culturală:</strong> Județul Gorj este legat indisolubil de Constantin Brâncuși, unul dintre cei mai mari sculptori ai lumii, ale cărui lucrări monumentale la Târgu Jiu au adus recunoaștere internațională și au subliniat importanța culturală a regiunii. Ansamblul Monumental de la Târgu Jiu reprezintă un simbol al contribuției Gorjului la patrimoniul cultural global.</p>
+                            <h3>Perspective pentru Viitor</h3>
+                            <p><strong>Dezvoltare economică și turistică:</strong> În prezent, județul Gorj își propune să îmbine tradiția cu modernizarea economică. Investițiile în infrastructură, turism și diversificarea economiei sunt esențiale pentru creșterea și dezvoltarea regiunii. Promovarea atracțiilor turistice naturale și culturale, precum și dezvoltarea de noi proiecte economice, pot contribui la consolidarea poziției Gorjului pe harta turistică și economică a României.</p>
+                            <p><strong>Sustenabilitate și inovație:</strong> Provocările legate de mediu și dezvoltarea durabilă sunt priorități pentru viitorul județului. Adaptarea la schimbările globale și găsirea unor soluții sustenabile pentru exploatarea resurselor naturale, precum și promovarea agriculturii ecologice și a energiilor regenerabile, sunt aspecte cruciale pentru dezvoltarea viitoare a regiunii.</p>
+                            <p><strong>Conservarea patrimoniului cultural:</strong> Continuarea eforturilor pentru conservarea și promovarea patrimoniului cultural, atât în ceea ce privește operele lui Brâncuși, cât și tradițiile locale, va asigura că valorile și identitatea culturală a județului Gorj sunt păstrate și transmise generațiilor viitoare.</p>
+                            <p>În concluzie, județul Gorj reprezintă un mozaic de istorie, cultură și potențial economic. Cu o moștenire culturală bogată și o bază economică în expansiune, Gorjul este bine plasat pentru a continua să joace un rol important în contextul național și internațional. Viitorul său va depinde de echilibrul între păstrarea valorilor istorice și culturale și adaptarea la schimbările economice și de mediu contemporane.</p>
+
+
+                            <h2>Resurse și Referințe</h2>
+                            <ul>
+                                <li><strong>Cărți și lucrări academice:</strong>
+                                    <ul>
+                                        <li><em>"Istoria României"</em> de Constantin C. Giurescu și Dinu C. Giurescu – O lucrare esențială pentru înțelegerea contextului istoric al României, inclusiv al județului Gorj.</li>
+                                        <li><em>"Gorjul – Studiu monografic"</em> de Mihail Sturdza – O lucrare detaliată despre istoria și cultura județului Gorj.</li>
+                                        <li><em>"Constantin Brâncuși – Monumentele din Târgu Jiu"</em> de Radu Varia – O carte dedicată ansamblului monumental al lui Constantin Brâncuși și importanței sale culturale.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Articole și studii de specialitate:</strong>
+                                    <ul>
+                                        <li><em>"Gorjul în contextul istoric al Țării Românești"</em> – Articole publicate în reviste de istorie și cultură care analizează rolul Gorjului în contextul național.</li>
+                                        <li><em>"Impactul Revoluției de la 1821 asupra regiunii Gorj"</em> – Studii academice care explorează contribuția lui Tudor Vladimirescu și efectele revoluției asupra județului.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Site-uri web oficiale:</strong>
+                                    <ul>
+                                        <li><a href="https://cjgorj.ro/" target="_blank">Consiliul Județean Gorj</a> – Site-ul oficial al administrației județene, care oferă informații despre dezvoltările recente, proiectele de infrastructură și inițiativele economice.</li>
+                                        <li><a href="https://www.cultura.ro/" target="_blank">Ministerul Culturii</a> – Site-ul ministerului care include informații despre patrimoniul cultural, inclusiv despre operele lui Constantin Brâncuși.</li>
+                                        <li><a href="https://www.onrc.ro/" target="_blank">Oficiul Național al Registrului Comerțului</a> – Pentru date economice și statistici actuale despre județul Gorj.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Resurse online și baze de date:</strong>
+                                    <ul>
+                                        <li><a href="https://ro.wikipedia.org/wiki/Jude%C8%9Bul_Gorj" target="_blank">Wikipedia</a> – Pagina despre județul Gorj, care oferă un rezumat accesibil și surse suplimentare.</li>
+                                        <li><a href="https://carturesti.ro/" target="_blank">Cărturești</a> și <a href="https://humanitas.ro/" target="_blank">Librăria Humanitas</a> – Platforme online care pot oferi acces la cărți și publicații relevante.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Publicații locale și regionale:</strong>
+                                    <ul>
+                                        <li><a href="https://gorjeanul.ro/" target="_blank">Gorjeanul</a> – Ziar local care publică articole și știri despre evenimente actuale și dezvoltări în județul Gorj.</li>
+                                        <li><a href="https://oltul-gorjul.ro/" target="_blank">Oltul și Gorjul</a> – Revista regională care oferă perspective asupra vieții și economiei locale.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+        </section>
+       
+    </main>
+</body>
+</html>
