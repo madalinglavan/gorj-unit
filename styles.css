@@ -95,7 +95,9 @@ header{
     z-index: 1000; /* Asigură-te că navbar-ul este deasupra altor elemente */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
+.navbar .logo img{
+    width: 160px;
+}
 .navbar .logo a {
     color: var(--text-color);
     text-decoration: none;
@@ -676,6 +678,9 @@ mark {
     }
     .navbar{
         justify-content: space-between;
+    }
+    .navbar .logo img{
+        width: 100px;
     }
     .nav-links {
         position: fixed;
