@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const rssUrls = [
         'https://primaria-bustuchin.ro/documente/feed/',      // Bustuchin
         'https://www.targujiu.ro/documente/feed/',            // Târgu Jiu
-        'https://www.primariamotru.ro/feed',        // Motru
+        'https://primariamotru.ro/categorie-documente/anunturi/feed/',        // Motru
         'https://www.bumbesti-jiu.ro/feed',         // Bumbești-Jiu
         'https://www.primariarovinari.ro/feed',     // Rovinari
         'https://www.primariacarbunesti.ro/feed',   // Târgu Cărbunești
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://www.primariabranesti.ro/feed/',    // Brănești
         'https://comunabumbestipitic.ro/feed/',     // Bumbești-Pițic
         'https://www.primaria-calnic.ro/feed/',     // Câlnic
-        'https://www.primariacapreni.ro/feed/',     // Căpreni
+        'https://primariacapreni.ro/categorie/anunturi-capreni-gorj/feed/',     // Căpreni
         'https://www.primariacatunele.ro/feed/',    // Cătunele
         'https://www.primariaciuperceni.ro/feed/',  // Ciuperceni
         'https://www.primariacrasna.ro/feed/',      // Crasna
@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getSource(rssUrl) {
         const urlMap = {
-            'https://www.primaria-bustuchin.ro/feed': 'Primaria Bustuchin',
-            'https://www.targujiu.ro/feed': 'Primaria Târgu Jiu',
-            'https://www.primariamotru.ro/feed': 'Primaria Motru',
+            'https://primaria-bustuchin.ro/documente/feed/': 'Primaria Bustuchin',
+            'https://www.targujiu.ro/dm_tgjiu/portal': 'Primaria Târgu Jiu',
+            'https://primariamotru.ro/categorie-documente/anunturi/feed/': 'Primaria Motru',
             'https://www.bumbesti-jiu.ro/feed': 'Primaria Bumbești-Jiu',
             'https://www.primariarovinari.ro/feed': 'Primaria Rovinari',
             'https://www.primariacarbunesti.ro/feed': 'Primaria Târgu Cărbunești',
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'https://www.primariabranesti.ro/feed': 'Primaria Brănești',
             'https://comunabumbestipitic.ro/feed': 'Primaria Bumbești-Pițic',
             'https://www.primaria-calnic.ro/feed': 'Primaria Câlnic',
-            'https://www.primariacapreni.ro/feed': 'Primaria Căpreni',
+            'https://primariacapreni.ro/categorie/anunturi-capreni-gorj/feed/': 'Primaria Căpreni',
             'https://www.primariacatunele.ro/feed': 'Primaria Cătunele',
             'https://www.primariaciuperceni.ro/feed': 'Primaria Ciuperceni',
             'https://www.primariacrasna.ro/feed': 'Primaria Crasna',

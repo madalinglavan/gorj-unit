@@ -173,6 +173,22 @@ header{
 #search-input::placeholder {
     color:var(--background-color);
 }
+.search-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+#search-input {
+    padding-left: 30px; /* Ajustează în funcție de dimensiunea iconiței */
+}
 
 section {
     background-color: var(--text-color);

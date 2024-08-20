@@ -181,10 +181,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    searchInput.addEventListener('input', function() {
-        const query = searchInput.value;
-        filterNews(query);
-    });
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value;
+            const filteredItems = allNewsItems.filter(item => {
+                const titleMatch = item.title.toLowerCase().includes(query.toLowerCase());
+                const descriptionMatch = (item.content || item.description || '').toLowerCase().includes(query.toLowerCase());
+                return titleMatch || descriptionMatch;
+            });
+            displayNews(filteredItems);
+        });
+    }
 
     document.addEventListener('click', function(event) {
         if (!searchInput.contains(event.target)) {
@@ -212,22 +219,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadAllNews();
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Gestionarea click-ului pe butonul de meniu (hamburger)
 document.querySelector(".hamburger").addEventListener("click", function() {
     this.classList.toggle("active");
@@ -254,4 +245,3 @@ document.addEventListener("click", function(event) {
         document.querySelector(".nav-links").classList.remove("active");
     }
 });
-
