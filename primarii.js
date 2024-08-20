@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://www.primariacrasna.ro/feed/',      // Crasna
         'https://www.comunacruset.ro/feed/',        // Crușeț
         'https://www.primariadanciulesti.ro/feed/', // Dănciulești
-        'https://www.comunadanesti.ro/feed/',       // Dănești
+        'https://www.comunadanesti.ro/category/avizier-electronic/feed/',       // Dănești
         'https://www.primariadragotesti.ro/feed/',  // Drăgotești
         'https://www.primaria-dragutesti.ro/feed/', // Drăguțești
         'https://primariafarcasesti-gj.ro/feed/',   // Fărcășești
@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
         'https://www.primariajupinesti.ro/feed/',   // Jupânești
         'https://www.primarialelesti.ro/feed/',     // Lelești
         'https://www.primarialicurici.ro/feed/',    // Licurici
-        'https://www.primaria-logresti.ro/feed/',   // Logrești
+        'https://logresti.regis-online.ro/monitorul-oficial-local/rss',   // Logrești
         'https://www.primariamatasari.ro/feed/',    // Mătăsari
         'https://www.primariamusetesti.ro/feed/',   // Mușetești
         'https://www.comunanegomir.ro/feed/',       // Negomir
         'https://www.primariapades.ro/feed/',       // Padeș
-        'https://www.pestisani.ro/feed/',           // Peștișani
+        'https://www.pestisani.ro/category/anunturi/feed/',// Peștișani
         'https://www.primariaplopsoru.ro/feed/',    // Plopșoru
         'https://www.comunapolovragi.ro/feed/',     // Polovragi
         'https://www.primariaprigoria.ro/feed/',    // Prigoria
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'https://www.primariacrasna.ro/feed': 'Primaria Crasna',
             'https://www.comunacruset.ro/feed': 'Primaria Crușeț',
             'https://www.primariadanciulesti.ro/feed': 'Primaria Dănciulești',
-            'https://www.comunadanesti.ro/feed': 'Primaria Dănești',
+            'https://www.comunadanesti.ro/category/avizier-electronic/feed/': 'Primaria Dănești',
             'https://www.primariadragotesti.ro/feed': 'Primaria Drăgotești',
             'https://www.primaria-dragutesti.ro/feed': 'Primaria Drăguțești',
             'https://primariafarcasesti-gj.ro/feed': 'Primaria Fărcășești',
@@ -141,12 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
             'https://www.primariajupinesti.ro/feed': 'Primaria Jupânești',
             'https://www.primarialelesti.ro/feed': 'Primaria Lelești',
             'https://www.primarialicurici.ro/feed': 'Primaria Licurici',
-            'https://www.primaria-logresti.ro/feed': 'Primaria Logrești',
+            'https://logresti.regis-online.ro/monitorul-oficial-local/rss': 'Primaria Logrești',
             'https://www.primariamatasari.ro/feed': 'Primaria Mătăsari',
             'https://www.primariamusetesti.ro/feed': 'Primaria Mușetești',
             'https://www.comunanegomir.ro/feed': 'Primaria Negomir',
             'https://www.primariapades.ro/feed': 'Primaria Padeș',
-            'https://www.pestisani.ro/feed': 'Primaria Peștișani',
+            'https://www.pestisani.ro/category/anunturi/feed/': 'Primaria Peștișani',
             'https://www.primariaplopsoru.ro/feed': 'Primaria Plopșoru',
             'https://www.comunapolovragi.ro/feed': 'Primaria Polovragi',
             'https://www.primariaprigoria.ro/feed': 'Primaria Prigoria',
