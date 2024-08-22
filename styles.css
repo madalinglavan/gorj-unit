@@ -110,22 +110,54 @@ header{
     display: flex;
     gap: 2rem;
     margin-right: 1rem; /* Pentru a face loc hamburger-ului pe mobil */
+    padding: 0;
+    align-items: center;
 }
 
 .nav-links li a {
     color: var(--inactive-color); /* Gri deschis pentru linkuri inactive */
     text-decoration: none;
     font-size: 1rem;
-    transition: color var(--transition-speed);
+    font-weight: 500;
+    position: relative; /* Pentru a adăuga sublinierea animată */
+    padding: 5px 0;
+    transition: color var(--transition-speed), font-weight var(--transition-speed);
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: var(--hover-color); /* Culoarea pentru subliniere */
+    transition: width var(--transition-speed);
+    bottom: 0;
+    left: 0;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a:focus::after {
+    width: 100%; /* Sublinierea se extinde pe întreaga lățime la hover */
 }
 
 .nav-links li a:hover,
 .nav-links li a:focus {
     color: var(--hover-color); /* Culoare evidențiată la hover */
+    font-weight: 600;
+}
+
+/* Stil pentru linkurile active */
+.nav-links li a.active {
+    color: var(--primary-color); /* Evidențiază linkul activ */
+    font-weight: 700;
+}
+
+.nav-links li a.active::after {
+    width: 100%; /* Subliniere completă pentru linkul activ */
 }
 
 .hamburger {
-    
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -207,7 +239,7 @@ section {
 section h2 {
     margin-bottom: 15px;
     color: var(--primary-color);
-    border-bottom: 3px solid var(--secondary-color);
+    border-bottom: 3px solid var(--hover-color);
     padding-bottom: 10px;
     text-align: center; /* Titlurile sunt centrate */
 }
@@ -257,7 +289,7 @@ section h2 {
     box-sizing: border-box; /* Include padding și border în lățimea totală */
     margin-bottom: 25px;
     border-radius: 10px;
-    background-color: var(--text-color);
+    background-color: rgb(214, 213, 213);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.274);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     display: flex;
@@ -294,7 +326,7 @@ section h2 {
 
 .news-item .news-source {
     font-style: italic;
-    color: var(--secondary-color); /* Sursa știrii în secondary-color */
+    color: var(--background-color); /* Sursa știrii în secondary-color */
     margin-bottom: 10px;
     text-align: center;
 }
@@ -734,6 +766,11 @@ mark {
     
     .nav-links.active {
         transform: translateX(0); /* Aduce meniul în vizor */
+    }
+    /* Efect de focus accesibil */
+    .nav-links li a:focus-visible {
+        outline: 2px solid var(--hover-color);
+        outline-offset: 4px;
     }
 
     .hamburger {

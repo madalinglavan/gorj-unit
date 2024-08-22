@@ -301,6 +301,18 @@ document.addEventListener('DOMContentLoaded', function() {
             displayNews(filteredItems);
         });
     }
-
+    let debounceTimeout;
+    searchInput.addEventListener('input', function() {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            const query = searchInput.value.toLowerCase();
+            const filteredItems = allNewsItems.filter(item => {
+                const titleMatch = item.title.toLowerCase().includes(query);
+                const descriptionMatch = (item.content || item.description || '').toLowerCase().includes(query);
+                return titleMatch || descriptionMatch;
+            });
+            displayNews(filteredItems);
+        }, 300); // 300ms debounce time
+    });
     loadAllNews();
 });
