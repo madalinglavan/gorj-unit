@@ -96,6 +96,10 @@ header{
     z-index: 1000; /* Asigură-te că navbar-ul este deasupra altor elemente */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+.logo{
+    display: flex;
+    flex-direction: column;
+}
 .navbar .logo img{
     width: 160px;
 }
@@ -287,8 +291,9 @@ section h2 {
 
 /* Stilul pentru fiecare element de știre */
 .news-item {
-    width: 100%;
-    max-width: 100%; /* Asigură că elementul nu depășește lățimea ecranului */
+    width: 80%;
+    margin: 0 auto;
+    max-width: 100%;
     box-sizing: border-box; /* Include padding și border în lățimea totală */
     margin-bottom: 25px;
     border-radius: 10px;
@@ -311,21 +316,18 @@ section h2 {
 .news-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: rgb(189, 189, 189) ;
+    filter: drop-shadow(2px 5px 15px rgb(0, 0, 0));
 }
 
 .news-item h2 {
-    font-size: 1.3em;
-    color: var(--primary-color);
+    font-size: 1.5em;
+    color: var(--background-color);
+    text-shadow: 1px 1px 1px black;
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
-.news-item p {
-    margin: 10px 0;
-    text-align: left; /* Textul din paragrafe este aliniat la stânga */
-    width: 90%;
-    color: var(--primary-color);
-}
 
 .news-item .news-source {
     font-style: italic;
@@ -337,7 +339,8 @@ section h2 {
 .news-item p {
     margin: 10px 0;
     text-align: start;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     justify-content: center;
     color: var(--primary-color); /* Text principal în primary-color */
 }
@@ -652,15 +655,15 @@ mark {
 #location-button {
     margin-top: 10px;
     padding: 3px 10px;
-    background-color: #007bff;
-    color: white;
+    color: var(--background-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: .7rem;
 }
 
 #location-button:hover {
-    background-color: #0056b3;
+    background-color:var(--hover-color);
 }
 
 /* Stil pentru loader */
@@ -713,6 +716,25 @@ mark {
     background-color: var(--hover-color);
 }
 
+.custom-share-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 2px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+}
+.custom-share-button:hover {
+    color: #5590ff; /* Darker blue for hover */
+}
 /* Stilizare pentru iconița Facebook */
 .share-button .fa-facebook {
     margin-right: 8px; /* Spațiu între iconiță și text */
@@ -743,8 +765,11 @@ mark {
     .navbar{
         justify-content: space-between;
     }
+
     .navbar .logo img{
-        width: 100px;
+        width: 130px;
+        filter: drop-shadow(2px 5px 15px rgba(15, 112, 23, 0.726));
+
     }
     .nav-links {
         position: fixed;
@@ -814,9 +839,23 @@ mark {
         font-size: 16px;
 
     }
+    .news-item {
+        width: 100%;
+        max-width: 100%; /* Asigură că elementul nu depășește lățimea ecranului */
+        box-sizing: border-box; /* Include padding și border în lățimea totală */
+        margin-bottom: 25px;
+        border-radius: 10px;
+        background-color: rgb(214, 213, 213);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.274);
+        transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        text-align: left;
+        font-family:'Poppins', 'Segoe UI', sans-serif;
+    }
     .news-item h2{
         font-style: italic;
-        text-shadow: 0 1px 2px rgb(197, 197, 197);
     }
     .news-item p{
         width: 98%;

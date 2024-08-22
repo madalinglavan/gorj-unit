@@ -245,3 +245,20 @@ document.addEventListener("click", function(event) {
         document.querySelector(".nav-links").classList.remove("active");
     }
 });
+
+
+//anunta-ti prietenii 
+document.addEventListener('DOMContentLoaded', function() {
+    const shareButton = document.getElementById('share-button');
+    
+    shareButton.addEventListener('click', function() {
+        // Obține URL-ul paginii curente
+        const currentUrl = window.location.href;
+
+        // Creează URL-ul de share pe Facebook
+        const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+
+        // Deschide dialogul de share într-o fereastră nouă
+        window.open(facebookShareUrl, '_blank', 'width=600,height=400');
+    });
+});
