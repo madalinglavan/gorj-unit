@@ -18,6 +18,8 @@ const cities = [
 
 const weatherList = document.getElementById('weather-list');
 const loader = document.getElementById('loader');
+const rightPanel = document.querySelector('.right-home-panel');
+const locationButton = document.getElementById('location-button');
 
 function isDaytime(time) {
     const hour = time.getHours();
@@ -90,14 +92,13 @@ async function updateWeather() {
         }
 
         // Verifică dacă orașul este Târgu Jiu
-        if (weather.name === 'Târgu Jiu' ) {
-            // Afișează informațiile în <div class="right-home-panel">
-            const rightPanel = document.querySelector('.right-home-panel');
+        if (weather.name === 'Târgu Jiu') {
             rightPanel.innerHTML = `
-                <h3> ${weather.name}</h3>
+                <h3>${weather.name}</h3>
                 ${getWeatherIcon(weather.weather, weather.isDaytime)}
                 <span class="temperature">${weather.temperature}°C</span>
             `;
+            rightPanel.appendChild(locationButton);  // Reatașăm butonul de locație
         } else {
             weatherList.appendChild(listItem);
         }
@@ -106,6 +107,65 @@ async function updateWeather() {
     loader.style.display = 'none';
 }
 
+locationButton.addEventListener('click', updateWeatherForLocation);
+
+async function fetchWeatherByLocation(lat, lon) {
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
+        if (!response.ok) {
+            throw new Error('Eroare la obținerea vremii pentru locația dvs.');
+        }
+        const data = await response.json();
+        const localTime = new Date(data.dt * 1000);
+
+        return {
+            name: data.name,
+            temperature: data.main.temp,
+            weather: data.weather[0].main,
+            isDaytime: isDaytime(localTime)
+        };
+    } catch (error) {
+        console.error(error.message);
+        throw error;
+    }
+}
+
+async function updateWeatherForLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            try {
+                const weather = await fetchWeatherByLocation(lat, lon);
+
+                // Actualizăm informațiile pentru locația curentă
+                rightPanel.innerHTML = `
+                    <h3>${weather.name}</h3>
+                    ${getWeatherIcon(weather.weather, weather.isDaytime)}
+                    <span class="temperature">${weather.temperature}°C</span>
+                `;
+                rightPanel.appendChild(locationButton);  // Reatașăm butonul de locație
+            } catch (error) {
+                rightPanel.innerHTML = `
+                    <h3>Eroare</h3>
+                    <p>Nu am putut obține vremea pentru locația dvs.</p>
+                `;
+            }
+        }, (error) => {
+            console.error(error);
+            rightPanel.innerHTML = `
+                <h3>Eroare</h3>
+                <p>Nu s-a putut obține locația dvs. Asigurați-vă că aveți permisiunea activată.</p>
+            `;
+        });
+    } else {
+        rightPanel.innerHTML = `
+            <h3>Eroare</h3>
+            <p>Browser-ul dvs. nu suportă geolocalizarea.</p>
+        `;
+    }
+}
 
 document.getElementById('refresh-button').addEventListener('click', updateWeather);
 

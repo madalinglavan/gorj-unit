@@ -649,6 +649,19 @@ mark {
 .temperature {
     color: #555;
 }
+#location-button {
+    margin-top: 10px;
+    padding: 3px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#location-button:hover {
+    background-color: #0056b3;
+}
 
 /* Stil pentru loader */
 #loader {
@@ -848,3 +861,11 @@ mark {
 
 
 
+/* Stiluri pentru ecrane între 768px și 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .right-home-panel {
+
+        padding-top: 50px;
+    }
+
+}
