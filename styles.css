@@ -86,6 +86,7 @@ header{
     display: flex;
     justify-content:space-evenly;
     align-items: center;
+    flex-wrap: wrap;
     padding: 1rem;
     background-color: var(--primary-color);
     position: fixed; /* Fix navbar-ul la partea superioară */
@@ -108,10 +109,11 @@ header{
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     margin-right: 1rem; /* Pentru a face loc hamburger-ului pe mobil */
     padding: 0;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -121,6 +123,7 @@ header{
     font-weight: 500;
     position: relative; /* Pentru a adăuga sublinierea animată */
     padding: 5px 0;
+    
     transition: color var(--transition-speed), font-weight var(--transition-speed);
 }
 
@@ -183,8 +186,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px auto;
-    max-width: 400px;
+    margin: 5px;
+    max-width: 100px;
 }
 
 #search-input {
@@ -841,3 +844,7 @@ mark {
         margin-top: 10px; /* Spațiu deasupra temperaturii */
     }
 }
+
+
+
+
