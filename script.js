@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const rssUrls = [
         // Surse de știri
         'https://igj.ro/feed/',
+        'https://igj.ro/cultura/feed',
         'https://gorjeanul.ro/feed/',
-        'https://www.gorjonline.ro/feed/',
+        'https://gorjeanul.ro/category/sport-2/feed/',
+        'https://www.gorjonline.ro/category/ultima-ora/',
         'https://www.pandurul.ro/feed.rss',
         'https://www.gorjexpress.ro/feed/',
         'https://www.ziaruldegorj.ro/feed/',
@@ -50,8 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const urlMap = {
             // Surse de știri
             'https://igj.ro/feed/': 'Impact in Gorj',
+            'https://igj.ro/cultura/feed' : 'Impact in Gorj - cultura',
             'https://gorjeanul.ro/feed/': 'Gorjeanul',
-            'https://www.gorjonline.ro/feed/': 'Gorj Online',
+            'https://gorjeanul.ro/category/sport-2/feed/' : 'Gorjeanul - stiri din sport',
+            'https://www.gorjonline.ro/category/ultima-ora/': 'Gorj Online',
             'https://www.pandurul.ro/feed.rss': 'Pandurul',
             'https://www.gorjexpress.ro/feed/': 'Gorj Express',
             'https://www.ziaruldegorj.ro/feed/': 'Ziarul de Gorj',
