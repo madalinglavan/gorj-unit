@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
-    --primary-color: #2c3e50;  /* Un albastru închis */
-    --secondary-color: #e74c3c; /* Un roșu vibrant */
-    --text-color: #ecf0f1; /* Un alb plăcut */
-    --background-color: #34495e; /* Un gri-albăstrui */
-    --hover-color: #3498db; /* Un albastru deschis pentru hover */
-    --inactive-color: #bdc3c7; /* Gri pentru linkuri inactive */
-    --transition-speed: 0.3s; /* Viteza tranziției */
+    --primary-color: #2a2e3b;       /* Un gri-albăstrui închis, elegant */
+    --secondary-color: #ff6f61;     /* Un coral cald și vibrant */
+    --text-color: #f5f5f5;          /* Un alb delicat pentru text */
+    --background-color: #1a1d25;    /* Un gri închis profund, pentru fundal */
+    --hover-color: #000000;         /* Un roz pal pentru hover */
+    --inactive-color: #b0b0b0;      /* Un gri deschis pentru linkuri inactive */
+    --transition-speed: 0.3s;       /* Viteza tranziției */
 }
+
 html, body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -20,31 +21,6 @@ html, body {
 header{
     margin-bottom: 40px;
     position: relative;
-}
-.wrap-operele-brancusi-live{
-    padding-top: 50px;
-}
-.wrap-operele-brancusi-live h1{
-    font: 2rem sans-serif;
-}
-#operele-brancusi-live{
-    display: flex;
-    width: 100%;
-    height: fit-content;
-    justify-content: center;
-    align-items: center;
-}
-.iframe-container{
-    width: 100%;
-    height: 400px;
-}
-
-.iframe-container iframe{
-    width: 100%;
-    min-height: 100%;
-}
-.iframe-container h1{
-    font-size: 1rem;
 }
 
 .home-panel{
@@ -254,7 +230,7 @@ header{
 }
 
 section {
-    background-color: var(--text-color);
+    background-color: var(--background-color);
     margin-bottom: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -340,7 +316,7 @@ section h2 {
 .news-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: rgb(189, 189, 189) ;
+    background-color: rgb(255, 255, 255) ;
     filter: drop-shadow(0px 2px 2px rgb(0, 174, 255));
 }
 
@@ -786,6 +762,10 @@ mark {
     header{
         max-width: 100%;
     }
+    header{
+        margin-bottom: 40px;
+        position: relative;
+    }
     .navbar{
         justify-content: space-between;
     }
@@ -922,6 +902,7 @@ mark {
     #operele-brancusi-live{
         flex-direction: column;
     }
+    
 }
 
 
